@@ -1,6 +1,3 @@
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
 body {
     background-color:azure;
     font-family: 'Vollkorn'
@@ -13,15 +10,7 @@ body {
     font-family: 'Vollkorn';
 }
 
-/*header--------------------------*/
 
-.fade-in-name {
-    font-size: 60px;
-}
-
-.fade-in-roles {
-    font-size: 50px;
-}
 /*navigation------------------------*/
 
 .nav-link {
@@ -45,34 +34,19 @@ body {
     box-shadow: 0 1px 15px #808080;
 }
 
-/*
-.social-icons .fa {
-    color: black;
-    margin-left: 10px;
-    -webkit-transition: all 0.3s ease-out;
+.social-icons .fab:hover {
+        -webkit-transition: all 0.3s ease-out;
        -moz-transition: all 0.3s ease-out;
         -ms-transition: all 0.3s ease-out;
          -o-transition: all 0.3s ease-out;
             transition: all 0.3s ease-out;
-}
-
-.social-icons .fa:hover {
     color: rgb(115,192,214);
 }
-*/
 
 
 .fab {
   padding: 10px;
   color: rgb(55, 66, 75);
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.fa {
-  padding: 10px;
   font-size: 30px;
   width: 50px;
   text-align: center;
@@ -88,10 +62,6 @@ body {
     margin-bottom: 30px;
     background-color:azure;
     font-family: 'Vollkorn'
-}
-
-.intro {
-    
 }
 
 
