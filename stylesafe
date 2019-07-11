@@ -1,0 +1,52 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    color:darkcyan 
+}
+
+p {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    color: #191919;
+    font-family: 'Open Sans', sans-serif;
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+img {
+    vertical-align: baseline;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+}
+
+
+.fab {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.far {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}

@@ -1,0 +1,251 @@
+body {
+    background-color:azure;
+    font-family: 'Vollkorn'
+}
+
+
+/*fonts---------------------------*/
+
+.fontVollkorn {
+    font-family: 'Vollkorn';
+}
+
+
+
+/*navigation------------------------*/
+
+.nav-link {
+    color: #000;
+    font-size: 21px;
+    -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+         -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+
+.nav-link:hover {
+    color: rgb(115,192,214);
+}
+
+.navigation{
+    background-color: #fff;
+    height: 45px;
+    box-shadow: 0 1px 15px #808080;
+}
+
+/*
+.social-icons .fa {
+    color: black;
+    margin-left: 10px;
+    -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+         -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+
+.social-icons .fa:hover {
+    color: rgb(115,192,214);
+}
+*/
+
+
+.fab {
+  padding: 10px;
+  color: rgb(55, 66, 75);
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/*introduction-----------------------*/
+
+
+.intro-block {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    background-color:azure;
+}
+
+.intro {
+    font-family: 'Vollkorn'
+}
+
+/*
+
+@-webkit-keyframes arrow-move {
+    0%   {top: 0px;}
+    25%  {top: 20px;}
+    50%  {top: 0px;}
+    75%  {top: 20px;}
+    100% {top: 0px;}
+}
+
+@keyframes arrow-move {
+    0%   {top: 0px;}
+    25%  {top: 20px;}
+    50%  {top: 0px;}
+    75%  {top: 20px;}
+    100% {top: 0px;}
+}
+*/
+
+
+.intro-block:hover .fa-angle-down {
+    position: relative;
+    -webkit-animation: arrow-move 2s infinite;
+    animation: arrow-move 2s infinite;
+}
+
+/*portfolio------------------------*/
+
+.work-item {
+    height: auto;
+    background-color: #fff;
+    margin-top: 50px;
+    padding: 0;
+    position: relative;
+    box-shadow: -6px 6px 10px #4d4d4d;
+}
+
+.itemInfo {
+    position: absolute;
+    width: 40%;
+    padding: 10px 0 0 10px;
+    line-height: 140%;
+}
+
+.item {
+    width: 45%;
+    height: 100%;
+    padding-top: 30px;
+    background: gray; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
+    background: -o-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
+    background: -moz-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
+    background: linear-gradient(rgba(115,192,214,1), rgba(186,143,212,1));
+    position: relative;
+    left: 0;   
+    -webkit-transition: all 0.7s ease-out;
+       -moz-transition: all 0.7s ease-out;
+        -ms-transition: all 0.7s ease-out;
+         -o-transition: all 0.7s ease-out;
+            transition: all 0.7s ease-out;
+}
+
+
+.work-item:hover .item { /*portfolio item movement and opacity change*/
+    left: 55%;
+    background: -webkit-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
+    background: -o-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
+    background: -moz-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
+    background: linear-gradient(rgba(115,192,214,0.3), rgba(186,143,212,0.3));
+}
+
+.pcIcon {
+    width: 80%;
+    height: auto;
+}
+
+.projectTitle {
+    color: #fff;
+    width: 80%;
+    line-height: 32px;
+    font-size: 21px;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.projectTitle .fontLora {
+    font-size: 18px;
+}
+
+.link {
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    opacity: 0;
+    -webkit-transition: all 0.7s ease-out;
+       -moz-transition: all 0.7s ease-out;
+        -ms-transition: all 0.7s ease-out;
+         -o-transition: all 0.7s ease-out;
+            transition: all 0.7s ease-out;
+}
+
+.work-item:hover .link {
+    opacity: 1;
+}
+
+
+/*contact-----------------------------*/
+
+.contact {
+    background-color: white;
+    margin-top: 100px;
+    padding: 50px 0;
+}
+
+#signature {
+    width: 50%;
+    height: auto;
+    float:right;
+    margin-bottom: 20px;
+}
+
+.credit {
+  background-color: #fff;
+  padding-top: 30px;
+}
+
+/*phone view-----------------------*/
+
+@media only screen and (max-width: 700px){
+    .navigation {
+        height: 90px;
+        padding-bottom: 20px;
+    }
+    .work-item {
+      height: auto;
+    }
+    .itemInfo {
+        position: relative;
+        width: 90%;
+    }
+    .item {
+        width: 100%;
+        height: auto;
+    }
+    
+    .work-item:hover .item {
+        left: 0;
+    }
+    .intro-block {
+      padding-top: 150px;
+    }
+}
+
+/*text overflow fix-----------------------*/
+
+@media only screen and (min-width: 1200px) and (max-width:1360px) {
+  .item {
+    width: 50%;
+  }
+  .itemInfo {
+    width: 47%;
+  }
+  .work-item:hover .item{
+    left: 50%;
+  }
+}

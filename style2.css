@@ -1,0 +1,134 @@
+body {
+  font-family: 'Vollkorn', serif;
+}
+
+.navbar a:hover { 
+  background-color: #fff !important; 
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#home {
+  background-image:url(https://s13.postimg.org/7k072skzb/header.jpg);
+}
+
+#about {
+  background-image:url(https://s13.postimg.org/558bid4qf/people_apple_iphone_writing.jpg);
+}
+
+#portfolio {
+  background-image:url(https://s13.postimg.org/3tvyw5jqv/pexels_photo_41227.jpg);
+}
+
+#contact {
+  background-image:url(https://s13.postimg.org/qqde5z1h3/people_coffee_tea_meeting.jpg);
+}
+
+.navigation-bar {
+  margin-bottom: 0px !important;
+}
+
+.container {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h1, h2, h3, hr {
+    display: none;
+}
+
+@media(min-width:34em){
+  h1, h2, h3, hr {
+    color: black;
+  }
+}
+
+@media(min-width:48em){
+  h1, h2, h3, hr {
+    color: white;
+  }
+}
+
+@media(min-width:62em){
+  h1, h2, h3, hr {
+    color: white;
+  }
+}
+
+@media(min-width:75em){
+  h1, h2, h3, hr {
+    color: black;
+  }
+}
+
+.box {
+  padding-top: 5px; 
+}
+
+.vis {
+  visibility: hidden;
+}
+
+.portfolio-text, .portfolio-text2  {
+  font-size: 64px;
+}
+
+.well{
+    background: rgba(245, 245, 245, 0.6);
+    border: 0px;
+}
+
+.description-text {
+  color: black;
+  font-size: 16px;
+}
+
+.profile-picture {
+   border-radius: 50%;
+}
+
+.footer-style {
+  padding-top: 10px;
+}
+
+#overlay    {  
+  width: 86.5%;
+  height: 86.5%;
+  background:rgba(0,0,0,.75);
+  text-align:center;
+  opacity:0;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  position: absolute;
+}
+
+#overlay:hover { 
+  opacity:1;
+}
+
+#freeCodeCamp {  
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight:900;
+  color:rgba(255,255,255,.85);
+  font-size:96px;
+}
+
+.contact-buttons {
+  padding-left: 0px;
+}
+
+.contact-buttons li {
+   list-style-type: none;
+   list-style: none;
+}
