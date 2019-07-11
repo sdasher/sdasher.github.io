@@ -1,3 +1,6 @@
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
 body {
     background-color:azure;
     font-family: 'Vollkorn'
@@ -10,8 +13,15 @@ body {
     font-family: 'Vollkorn';
 }
 
+/*header--------------------------*/
 
+.fade-in-name {
+    font-size: 60px;
+}
 
+.fade-in-roles {
+    font-size: 50px;
+}
 /*navigation------------------------*/
 
 .nav-link {
@@ -27,6 +37,7 @@ body {
 .nav-link:hover {
     color: rgb(115,192,214);
 }
+
 
 .navigation{
     background-color: #fff;
@@ -76,13 +87,14 @@ body {
     padding-bottom: 20px;
     margin-bottom: 30px;
     background-color:azure;
-}
-
-.intro {
     font-family: 'Vollkorn'
 }
 
-/*
+.intro {
+    
+}
+
+
 
 @-webkit-keyframes arrow-move {
     0%   {top: 0px;}
@@ -99,10 +111,9 @@ body {
     75%  {top: 20px;}
     100% {top: 0px;}
 }
-*/
 
 
-.intro-block:hover .fa-angle-down {
+.intro:hover .fa-angle-down {
     position: relative;
     -webkit-animation: arrow-move 2s infinite;
     animation: arrow-move 2s infinite;
