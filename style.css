@@ -1,17 +1,20 @@
 body {
     background-color:azure;
-    font-family: 'Vollkorn'
-}
-
-
-/*fonts---------------------------*/
-
-.fontVollkorn {
     font-family: 'Vollkorn';
 }
 
 
-/*navigation------------------------*/
+/*FONTS---------------------------*/
+
+.fontBarlow {
+    font-family: 'Barlow'
+}
+
+.fontDosis {
+    font-family: 'Dosis'
+}
+
+/*NAVIGATION BAR------------------------*/
 
 .nav-link {
     color: #000;
@@ -53,18 +56,15 @@ body {
   text-decoration: none;
 }
 
-/*introduction-----------------------*/
+/*ABOUT-----------------------*/
 
 
 .intro-block {
     padding-top: 100px;
     padding-bottom: 20px;
     margin-bottom: 30px;
-    background-color:azure;
-    font-family: 'Vollkorn'
+ 
 }
-
-
 
 @-webkit-keyframes arrow-move {
     0%   {top: 0px;}
@@ -89,144 +89,18 @@ body {
     animation: arrow-move 2s infinite;
 }
 
-/*portfolio------------------------*/
+/*GALLERY------------------------*/
 
-.work-item {
-    height: auto;
-    background-color: #fff;
-    margin-top: 50px;
-    padding: 0;
-    position: relative;
-    box-shadow: -6px 6px 10px #4d4d4d;
+.caption {
+    font-family: 'Barlow';
+    color: darkslategrey;
 }
+    
 
-.itemInfo {
-    position: absolute;
-    width: 40%;
-    padding: 10px 0 0 10px;
-    line-height: 140%;
-}
-
-.item {
-    width: 45%;
-    height: 100%;
-    padding-top: 30px;
-    background: gray; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
-    background: -o-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
-    background: -moz-linear-gradient(rgba(115,192,214,1),rgba(186,143,212,1)); 
-    background: linear-gradient(rgba(115,192,214,1), rgba(186,143,212,1));
-    position: relative;
-    left: 0;   
-    -webkit-transition: all 0.7s ease-out;
-       -moz-transition: all 0.7s ease-out;
-        -ms-transition: all 0.7s ease-out;
-         -o-transition: all 0.7s ease-out;
-            transition: all 0.7s ease-out;
-}
-
-
-.work-item:hover .item { /*portfolio item movement and opacity change*/
-    left: 55%;
-    background: -webkit-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
-    background: -o-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
-    background: -moz-linear-gradient(rgba(115,192,214,0.3),rgba(186,143,212,0.3));
-    background: linear-gradient(rgba(115,192,214,0.3), rgba(186,143,212,0.3));
-}
-
-.pcIcon {
-    width: 80%;
-    height: auto;
-}
-
-.projectTitle {
-    color: #fff;
-    width: 80%;
-    line-height: 32px;
-    font-size: 21px;
-    letter-spacing: 0.5px;
-    margin-bottom: 0;
-    padding-bottom: 10px;
-}
-
-.projectTitle .fontLora {
-    font-size: 18px;
-}
-
-.link {
-    position: absolute;
-    top: 45%;
-    right: 45%;
-    opacity: 0;
-    -webkit-transition: all 0.7s ease-out;
-       -moz-transition: all 0.7s ease-out;
-        -ms-transition: all 0.7s ease-out;
-         -o-transition: all 0.7s ease-out;
-            transition: all 0.7s ease-out;
-}
-
-.work-item:hover .link {
-    opacity: 1;
-}
-
-
-/*contact-----------------------------*/
+/*CONTACT-----------------------------*/
 
 .contact {
-    background-color: white;
     margin-top: 100px;
     padding: 50px 0;
 }
 
-#signature {
-    width: 50%;
-    height: auto;
-    float:right;
-    margin-bottom: 20px;
-}
-
-.credit {
-  background-color: #fff;
-  padding-top: 30px;
-}
-
-/*phone view-----------------------*/
-
-@media only screen and (max-width: 700px){
-    .navigation {
-        height: 90px;
-        padding-bottom: 20px;
-    }
-    .work-item {
-      height: auto;
-    }
-    .itemInfo {
-        position: relative;
-        width: 90%;
-    }
-    .item {
-        width: 100%;
-        height: auto;
-    }
-    
-    .work-item:hover .item {
-        left: 0;
-    }
-    .intro-block {
-      padding-top: 150px;
-    }
-}
-
-/*text overflow fix-----------------------*/
-
-@media only screen and (min-width: 1200px) and (max-width:1360px) {
-  .item {
-    width: 50%;
-  }
-  .itemInfo {
-    width: 47%;
-  }
-  .work-item:hover .item{
-    left: 50%;
-  }
-}

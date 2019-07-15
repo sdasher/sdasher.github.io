@@ -13,7 +13,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css">
     <!--FONTS-->
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis|Vollkorn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Barlow|Vollkorn&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,13 +23,13 @@
     <div class="row navigation align-items-center fixed-top pl-3 pr-3">
     <ul class="nav col-12 col-sm-6 justify-content-center justify-content-sm-start">
       <li class="nav-item">
-        <a class="nav-link fontVollkorn active" href="#">about</a>
+        <a class="nav-link  active" href="#about">about</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link fontVollkorn" href="#work">resume</a>
+        <a class="nav-link" href="assets/Resume.pdf">resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link fontVollkorn" href="#contact">contact</a>
+        <a class="nav-link" href="#contact">contact</a>
       </li>
     </ul>
     
@@ -38,17 +38,17 @@
       <a href="https://www.linkedin.com/in/sarahdasher" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
     </div>
   </div>
-<hr class="mt-2 mb-5">
+
 <!--INTRO BLOCK-->
     <div class="row justify-content-center intro-block">
     <div class="col-md-12">
               <h1 class="text-center">Sarah Dasher</h1>
               <h2 class="text-center">cartographer | developer | designer</h2>
     </div>
-    <div class="col-10 col-md-8 col-lg-5 intro">
-      <div>My name is Sarah Dasher. I'm a cartography and GIS development graduate student at University of Wisconsin-Madison.  I have a master's degree in climate science and I previously worked as a geologist in the energy sector. I am always developing my technical skills.
+    <div class="col-12 col-md-6 col-lg-5 intro">
+      <div href="#about" class="fontBarlow">My name is Sarah Dasher. I'm a graduate student in cartography and GIS development at the University of Wisconsin-Madison.  I have a master's degree in climate science and I previously worked as a geologist in the energy industry. I am interested in issues of climate change, natural resources, and national defense. I am always developing my technical skills.
                   <br>
-                  <div>Competencies:</div>
+                  <div><strong>Competencies:</strong></div>
                   <div><strong>Languages:</strong> JavaScript, Java, Python, HTML5, Bootstrap</div>
                   <div><strong>Software:</strong>ArcGIS, QGIS, Adobe Illustrator, Adobe Photoshop</div>
                   <div><strong>Database:</strong> MySQL, PostgreSQL</div>
@@ -58,62 +58,90 @@
 </div>
 
 <!--START CONTAINER-->
-<div class="container">
+    <div class="container">
   <div class="row">
-      <div class="col-12 col-md-6 col-lg-3">
+      <div class="col-12 col-md-6 col-lg-6">
         <a href="assets/fullsweden.png" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="assets/fullsweden.png" alt="">
-                <div class="caption">
-                <h4>Tour de Midnight Sun</h4>
-                <p>A stage race map with custom hillshading, from DEM and land cover rasters. ArcGIS, Adobe Illustrator, Adobe Photoshop</p>
-                </div>
-        </a>
+            <img class="img-fluid img-thumbnail" src="assets/thumbsweden.png" alt="">
+                <div class="caption fontBarlow">
+                    <h4>Tour de Midnight Sun</h4>
+                    <p>A stage race map with custom hillshading, from DEM and land cover rasters. </p>
+                    <p>Tools: ArcGIS, GDAL/OGR, Adobe Illustrator, Adobe Photoshop</p>
+                </div></a>
     </div>
-      <div class="col-12 col-md-6 col-lg-3">
+    
+      <div class="col-12 col-md-6 col-lg-6">
+      <a href=" https://codepen.io/srdasher/pen/zRjVBQ" class="d-block mb-1 h-100">
+            <img class="img-fluid img-thumbnail" src="assets/thumbwikiviewer.png" alt="">
+           <div class="caption fontBarlow">
+                    <h4>WikiViewer</h4>
+                    <p>Search for a phrase in Wikipedia and preview the top hits, or click for a random article.</p>
+                    <p>Tools: HTML, css, Bootstrap, jQuery, Ajax</p>
+                </div></a>
+          </a>
+    </div>
+            <div class="col-12 col-md-6 col-lg-6">
+      <a href="https://codepen.io/srdasher/pen/xYWBgZ" class="d-block mb-1 h-100">
+            <img class="img-fluid img-thumbnail" src="assets/thumbrandomquote.png" alt="">
+          <div class="caption">
+                <h4>Random Quote Generator</h4>
+                <p>Click for a random quote, pulled from a JSON-based API.</p>
+                <p>Tools: HTML, css, Bootstrap, JavaScript, jQuery, Ajax</p>
+                </div>
+          </a>
+    </div>
+    
+    <div class="col-12 col-md-6 col-lg-6">
+      <a href="assets/fullthesis.pdf" class="d-block mb-1 h-100">
+            <img class="img-fluid img-thumbnail" src="assets/thumbthesis.png" alt="">
+          <div class="caption">
+                <h4>The South American Monsoon</h4>
+                <p> Between 1995 and 2009, parts of South America were 25% more arid than the decades before, while other parts were 25% wetter. Could this be climate change?</p>
+                <p>Tools: MATLAB</p>
+                </div>
+          </a>
+    </div>
+        
+<!--    <div class="col-12 col-md-6 col-lg-6">
         <a href="assets/fullf35.png" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="assets/fullf35.png" alt="">
+            <img class="img-fluid img-thumbnail" src="assets/thumbf35.png" alt="">
             <div class="caption">
                 <h4>Sound of Freedom</h4>
                 <p>How much noise pollution from America's newest fighter jet? ArcGIS, Adobe Illustrator</p>
+                <p>Tools: ArcGIS, Adobe Illustrator</p>
                 </div>
           </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
-          </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
-          </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
-          </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
-          </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
-          </a>
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-      <a href="#" class="d-block mb-1 h-100">
-            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
-          </a>
-    </div>
+    </div>-->
+   
+
+
+     
   </div>
 </div>
-<!-- END CONTAINER-->
-     <div class="social-profiles">
-        <ul class="flex justify-content-start justify-content-lg-center align-items-center">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-    </div><!-- .social-profiles -->
+    
+<!--CONTACT-->
+ 
+    <div class="row justify-content-center contact" id="contact">
+    <div class="col-10 col-sm-5 col-lg-4 pr-lg-5">
+      <h2 class="text-center" href="#contact">Contact Me</h2>
+        <p>Thanks for stopping by. I hope to grow this portfolio throughout my time as a student, so I hope you'll visit again.
+            If you have any suggestions or questions, or just want to say "hi", you can do that here. Thank you!
+    </div>
+    <form class="col-10 col-sm-5 offset-lg-1">
+      <div class="form-group">
+        <input type="text" class="form-control" id="inputName" placeholder="your name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control fontJosefin" id="inputEmail" aria-describedby="emailHelp" placeholder="your email" required>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="inputTextarea" rows="6" placeholder="your message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-outline-primary"><i class="fa fa-rocket" aria-hidden="true"></i> send</button>
+    </form>
+
+  </div>
+  <div class="row credit">
+    <p class="col-12 text-center">created by Sarah Dasher</p>
+  </div>
+</div> 
