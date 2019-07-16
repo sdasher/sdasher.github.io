@@ -10,10 +10,6 @@ body {
     font-family: 'Barlow'
 }
 
-.fontDosis {
-    font-family: 'Dosis'
-}
-
 /*NAVIGATION BAR------------------------*/
 
 .nav-link {
@@ -34,7 +30,7 @@ body {
 .navigation{
     background-color: #fff;
     height: 45px;
-    box-shadow: 0 1px 15px #808080;
+    box-shadow: 0 10px 15px #808080;
 }
 
 .social-icons .fab:hover {
@@ -56,7 +52,7 @@ body {
   text-decoration: none;
 }
 
-/*ABOUT-----------------------*/
+/*INTRO BLOCK-----------------------*/
 
 
 .intro-block {
@@ -66,6 +62,7 @@ body {
  
 }
 
+/*BOUNCING ARROW-------------*/
 @-webkit-keyframes arrow-move {
     0%   {top: 0px;}
     25%  {top: 20px;}
@@ -89,7 +86,7 @@ body {
     animation: arrow-move 2s infinite;
 }
 
-/*GALLERY------------------------*/
+/*GALLERY OF WORK------------------------*/
 
 .caption {
     font-family: 'Barlow';
@@ -103,4 +100,15 @@ body {
     margin-top: 100px;
     padding: 50px 0;
 }
+/*SMALL SCREENS-----------------------*/
 
+@media only screen and (max-width: 700px){
+    .navigation {
+        height: 90px;
+        padding-bottom: 20px;
+    }
+
+    .intro-block {
+      padding-top: 150px;
+    }
+}
