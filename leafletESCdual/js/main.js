@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 
 
-    $.getJSON("/data/convertedregionsfinal.geojson")
+    $.getJSON("https://sdasher.github.io/leafletESCdual/data/convertedregionsfinal.geojson")
       .done(function(data) {
 
         var info = processData(data);
