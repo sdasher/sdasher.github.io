@@ -362,7 +362,7 @@ function createSequenceControls(map, attributes) {
 //Step 2: Import GeoJSON data
 function getData(map) {
   //load the data
-  $.ajax("https://sdasher.github.io/leafletworking/data/convertedregionsfinal.geojson", {
+  $.ajax("data/convertedregionsfinal.geojson", {
     dataType: "json",
     success: function(response) {
       var attributes = processData(response);
