@@ -1,0 +1,111 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+background-color: white;
+
+}
+
+#wrapper {
+   width: 960px;
+   margin: 15px auto;
+   border-width: 1px;
+   border-color: black;
+
+  }
+
+#map {
+   height: 600px;
+   width: 600px;
+   margin: 15px auto;
+   box-shadow: 0 0 15px rgba(0,0,0,0.8);
+
+  }
+#bodytext{
+font-size: 14px;
+   margin: 15px auto;
+
+}
+#bigfont{
+  font-size: 24px;
+  text-align: center;
+  font-variant:small-caps;
+
+}
+
+#sources{
+  font-size: 12px;
+  font-variant: italic;
+
+}
+.legend, .temporal-legend {
+padding: 0px 0px;
+  font: 10px/16px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+background: white;
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 15 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+#temporal-legend {
+  font: 8px/8px;
+  font-family: 'Open Sans', sans-serif;
+}
+#legendTitle {
+  font: 8px/8px;
+  text-align: right;
+margin-bottom: 0px;
+font-family: 'Open Sans', sans-serif;
+font-variant: small-caps;
+}
+.symbolsContainer {
+  float: left;
+margin-left: 50px;
+}
+
+.legendValue {
+  position: absolute;
+  right: 18px;
+}
+
+.leaflet-popup-content p {
+	margin: 0.2em 0;
+}
+
+.sequence-control-container, .legend-control-container {
+	background-color: rgba(255,255,255,0.4);
+	padding: 0px;
+  border-radius:10%;
+  font-family: 'Open Sans', sans-serif;
+  font-size:16px;
+	text-align: center;
+}
+
+.leaflet-bottom.leaflet-left{
+    margin-bottom: 0px;
+}
+
+.sequence-control-container {
+    width: 300px;
+    height: 30px;
+    line-height: 35px;
+}
+
+.range-slider {
+    width: 200px;
+}
+
+#forward {
+    float: right;
+}
+
+#reverse {
+    float: left;
+}
+
+.legend-control-container {
+    height: 120px;
+}
