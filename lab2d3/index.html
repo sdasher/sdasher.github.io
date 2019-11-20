@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Environmental Protection Index of World Countries</h1>
+	<div><p><a href="https://epi.envirocenter.yale.edu/">The 2018 Environmental Performance Index (EPI)</a> ranks 180 countries on 24 performance indicators across ten issue categories covering environmental health and ecosystem vitality. These metrics provide a gauge at a national scale of how close countries are to established environmental policy goals.</P>
+	</div>
+	<!-- <script src="tooltip.js"></script> -->
+	<button id="abbrBtn">Abbreviations</button>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+
+			<TABLE FRAME=VOID CELLSPACING=0 COLS=10 RULES=NONE BORDER=0>
+				<COLGROUP>
+					<COL WIDTH=72>
+					<COL WIDTH=284>
+					<COL WIDTH=84>
+					<COL WIDTH=114>
+					<COL WIDTH=246>
+					<COL WIDTH=84>
+					<COL WIDTH=79>
+					<COL WIDTH=447>
+					<COL WIDTH=84>
+					<COL WIDTH=100>
+				</COLGROUP>
+				<TBODY>
+					<tr>
+						<td WIDTH=72 HEIGHT=34 ALIGN=CENTER valign=middle BGCOLOR="#595C56" SDNUM="1033;1033;General"><B>
+								<FONT FACE="Montserrat" COLOR="#FFFFFF"><BR></FONT>
+							</B></td>
+						<td COLSPAN=3 WIDTH=482 ALIGN=CENTER valign=middle BGCOLOR="#595C56" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">CATEGORY</FONT>
+						</td>
+						<td COLSPAN=3 WIDTH=408 ALIGN=CENTER valign=middle BGCOLOR="#595C56" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SUB CATEGORY</FONT>
+						</td>
+						<td COLSPAN=3 WIDTH=631 ALIGN=CENTER valign=middle BGCOLOR="#595C56" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SUB-SUB CATEGORY</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=24 HEIGHT=981 ALIGN=CENTER valign=middle BGCOLOR="#595C56" SDNUM="1033;1033;General"><B>
+								<FONT FACE="Montserrat" COLOR="#FFFFFF">EPI</FONT>
+							</B></td>
+						<td ROWSPAN=6 ALIGN=CENTER valign=middle BGCOLOR="#08519c" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">Environmental Health</FONT>
+						</td>
+						<td ROWSPAN=6 ALIGN=CENTER valign=middle BGCOLOR="#3182bd" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">HLT</FONT>
+						</td>
+						<td ROWSPAN=6 ALIGN=CENTER valign=middle BGCOLOR="#3182bd" SDVAL="0.4" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">40%</FONT>
+						</td>
+						<td ROWSPAN=3 ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Air Quality</FONT>
+						</td>
+						<td ROWSPAN=3 ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">AIR</FONT>
+						</td>
+						<td ROWSPAN=3 ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="0.65" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">65%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Household Solid Fuels</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">HAD</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="0.4" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">40%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PM2.5 ExposurePM2.5 Exposure</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PME</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="0.3" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">30%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PM2.5 ExceedancePM2.5 Exceedance</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PMW</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="0.3" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">30%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=2 ALIGN=LEFT valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Water &amp; Sanitation</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=CENTER valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">H2O</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=RIGHT valign=middle BGCOLOR="#eff3ff" SDVAL="0.3" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">30%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Drinking Water</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">UWD</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#eff3ff" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Sanitation</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#eff3ff" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">USD</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#eff3ff" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Heavy Metals</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">HMT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="0.05" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">5%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Lead Exposure</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bdd7e7" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PBD</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bdd7e7" SDVAL="1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">100%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=18 ALIGN=CENTER valign=middle BGCOLOR="#006d2c" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">Ecosystem Vitality </FONT>
+						</td>
+						<td ROWSPAN=18 ALIGN=CENTER valign=middle BGCOLOR="#31a354" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">ECO</FONT>
+						</td>
+						<td ROWSPAN=18 ALIGN=CENTER valign=middle BGCOLOR="#31a354" SDVAL="0.6" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#FFFFFF">60%</FONT>
+						</td>
+						<td ROWSPAN=6 ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Biodiversity &amp; Habitat</FONT>
+						</td>
+						<td ROWSPAN=6 ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">BDH</FONT>
+						</td>
+						<td ROWSPAN=6 ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.25" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">25%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Marine Protected Areas</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">MPA</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Biome Protection (National)</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">TBN</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Biome Protection (Global)</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">TBG</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Species Protection Index</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SPI</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Representativeness Index</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">PAR</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">10%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Species Habitat Index</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SHI</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">10%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat">Forests</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat">FOR</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat">10%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat">Tree Cover Loss</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat">TCL</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat">100%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=2 ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Fisheries</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">FSH</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">10%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Fish Stock Status</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">FSS</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Regional Marine trophic Index</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Mtr</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=5 ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Climate &amp; Energy</FONT>
+						</td>
+						<td ROWSPAN=5 ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">CCE</FONT>
+						</td>
+						<td ROWSPAN=5 ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.3" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">30%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">CO2 Emissions &ndash; Total</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DCT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">CO2 Emissions &ndash; Power</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DPT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Methane Emissions</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DMT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.2" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">20%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">N2O Emissions</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DNT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.05" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">5%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Black Carbon Emissions</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DBT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.05" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">5%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ROWSPAN=2 ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Air Pollution</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">APE</FONT>
+						</td>
+						<td ROWSPAN=2 ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">10%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SO2 Emissions</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DST</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">NOX Emissions</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">DXT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.5" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">50%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Water Resources</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">WRS</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="0.1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">10%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Wastewater treatment</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#edf8e9" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">WWT</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#edf8e9" SDVAL="1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">100%</FONT>
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Agriculture</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">AGR</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="0.05" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">5%</FONT>
+						</td>
+						<td ALIGN=LEFT valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">Sustainable Nitrogen Management</FONT>
+						</td>
+						<td ALIGN=CENTER valign=middle BGCOLOR="#bae4b3" SDNUM="1033;1033;General">
+							<FONT FACE="Montserrat" COLOR="#000000">SNM</FONT>
+						</td>
+						<td ALIGN=RIGHT valign=middle BGCOLOR="#bae4b3" SDVAL="1" SDNUM="1033;1033;0%">
+							<FONT FACE="Montserrat" COLOR="#000000">100%</FONT>
+						</td>
+					</tr>
+				</TBODY>
+			</TABLE>
+		</div>
+
+	</div>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/queue.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
+
+
+</body>
+
+</html>
