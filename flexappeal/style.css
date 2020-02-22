@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*, /*This is a basic reset on the margin and padding. setting the box-sizing to b-b helps to calculating the paddings etc.*/
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{ /*this is how to declare css variables. root is the document.*/
+    --main-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #252525;
+    --secondary-font-color: #c59d5f;
+    --body-font-color: #515151;
+}
+
+html {
+    font-family: var(--body-font);
+    font-size: 10px; /*setting html to px because it'll be easier to use rems. it scales a lot better when it comes to responsive design and everything manageable*/
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3.9rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    max-width: 100%; /*this will make sure that even if the img is too big for the section, it's not going to overflow it's parent*/
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 60px;
+    letter-spacing: 4px;
+    z-index: 100;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 30px;
+    letter-spacing: 1.8px;
+    margin-top: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem; /*this means that the container is only going to be 1225 px. once we're under this particular px, the width 100% will take over*/
+    margin: 0 auto; /*the margin and padding moves the container in the right position so it is not next to the window screen. to center the container*/
+    padding: 0 2.4rem;
+}
+
+/*header*/
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+}
+
+.nav {
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle {
+    color: #fff;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+.fa-times {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--main-font-color-dark);
+    padding: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1250;
+    transform: translateX(-100%);
+    transition: transform .5s;
+}
+
+.nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.open .fa-times {
+    display: block;
+}
+
+.open .fa-bars {
+    display: none;
+}
+
+.open .nav-list {
+    transform: translateX(0);
+}
+
+.open .nav::before {
+    opacity: 1;
+    transform: scale(1);
+}
+/*Hero*/
+.hero {
+    width: 100%;
+    height: 80vh;
+    background: url('https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/83823165_10100842497221190_1009945311793119232_o.jpg?_nc_cat=107&_nc_ohc=lkdGzzeqZ2cAX9awB_R&_nc_ht=scontent-dfw5-2.xx&oh=58d2eadc750572bb470cc46b526d8188&oe=5EB7FBDB') center;
+opacity: 0.8;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: top;
+    text-align: left;
+}
+
+.headline {
+    color: black;
+    font-size: 72px;
+    font-family: Audiowide;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1rem;
+    margin-right: -.9rem;
+    margin-bottom: -.9rem;
+    animation: scale .5s forwards;
+}
+
+.address {
+    color: black;
+    font-size: 30px;
+    font-family: Audiowide;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1rem;
+    text-align: center;
+margin-left:-.1rem;
+    margin-bottom: -.1rem;
+    animation: scale .5s forwards;
+}
+/* white background */
+.white-bg {
+    background: #fff;
+    overflow: hidden;
+}
+/* about me */
+section .section-content {
+    width: 100%;
+    max-width: 1225px;
+    margin: 2vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+    overflow-y: visible;
+}
+ #pic {
+   width: 80%;
+ }
+
+.heading {
+    font-size: 56px;
+    margin-bottom: 50px;
+}
+
+
+section .background-text {
+    text-align: center;
+    display: block;
+    position: flex;
+    left: 50%;
+
+    color: grey;
+    letter-spacing: 10px;
+    font-size: 51px;
+    pointer-events: none;
+    z-index: 0;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* profile image */
+
+.profile-section-content {
+    width: 100%;
+    max-width: 1225px;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-image {
+  width: 30%;
+
+}
+
+.orange-box {
+    background: #DE8F0B;
+    opacity: 0.7;
+
+
+}
+#orange-box-text{
+  background: #DE8F0B;
+  text-align: left;
+      margin: 2%;
+      opacity: 1.0;
+      color:black;
+}
+
+
+/* results */
+
+[data-scroll] {
+    transition: transform 2s;
+}
+
+[data-scroll="in"] {
+    transform: translateY(0);
+}
+
+[data-scroll="out"] {
+    transform: translateY(30px);
+}
+
+.polygon {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 51%, 0 0);
+}
+
+.triangle {
+    clip-path: polygon(0 58%, 0% 100%, 100% 100%);
+}
+
+
+.polygon-reverse {
+    clip-path: polygon(50% 0%, 100% 0, 100% 51%, 0 100%, 0 0);
+}
+
+.bg-yellow::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 200vw;
+    height: 50vh;
+    background-color: lightblue;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(29deg);
+    z-index: -100;
+}
+
+
+.bg-yellow-rotate::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 200vw;
+    height: 50vh;
+    background-color: lightblue;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-29deg);
+    z-index: -100;
+}
+
+
+/* media query */
+@media screen and (min-width: 900px) {
+    .profile-section-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .orange-box {
+        flex: 1;
+    }
+
+    .results {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        max-width: 122.5rem; /*this means that the container is only going to be 1225 px. once we're under this particular px, the width 100% will take over*/
+        margin: 0 auto; /*the margin and padding moves the container in the right position so it is not next to the window screen. to center the container*/
+        padding: 0 2.4rem;
+    }
+
+    .progress {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 122.5rem; /*this means that the container is only going to be 1225 px. once we're under this particular px, the width 100% will take over*/
+        margin: 0 auto; /*the margin and padding moves the container in the right position so it is not next to the window screen. to center the container*/
+        padding: 0 2.4rem;
+    }
+}
