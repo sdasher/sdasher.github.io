@@ -27,7 +27,7 @@ p {
 /*Layout*/
 html,
 body {
-  width: 70%;
+  width: auto;
   height: 100%;
 }
 
@@ -195,7 +195,7 @@ hr {
 
 /*Intro*/
 .sec-intro {
-  position: relative;
+  height: auto;
 }
 
 .sec-intro img {
@@ -222,14 +222,23 @@ hr {
 #experience {
   background-color: #4A545D;
   color: white;
+  height: auto;
+  position: relative;
+
+ }
+ #reliability {
+   background-color: white;
+   height: auto;
+   position: relative;
 
  }
  #safety {
       background-color: #9BA6AC;
       color: white;
+        height: auto;
+          position: relative;
  }
 
-#reliability {}
 .index-box {
   float: left;
   width: 33%;
@@ -273,7 +282,7 @@ hr {
 .box {
   float: left;
   padding: 1em 1em;
-  width: 33%;
+  width: 100%;
   border-top: 0.1em solid #d3d3d3;
   border-bottom: 0.1em solid #d3d3d3;
   border-left: 0.1em solid #d3d3d3;
