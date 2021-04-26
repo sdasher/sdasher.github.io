@@ -1,0 +1,147 @@
+
+@media screen and (min-width: 500px) {
+
+  /* no grid support? */
+  .sidebar {
+    float: left;
+    width: 20%;
+    font: 14px/1.5 "Montserrat", Arial, Helvetica, sans-serif;
+  }
+
+  .content {
+    float: right;
+    width: 80%;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .header, .footer {
+    font: 36px "Montserrat", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+
+  a:link {
+    color: red;
+    font-weight: 700;
+  }
+
+  /* visited link */
+  a:visited {
+    color: gray;
+    font-weight: 700;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+    font-weight: 700;
+  }
+
+  html,
+  body,
+  #map,
+  #elevation-div {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+
+.wrapper > * {
+  background-color: #515d67;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}
+    .leaflet-control-attribution {
+      visibility: visible;
+    }
+
+  .leaflet-control-layers-list {
+    max-width: 250px;
+    max-height: 25vh;
+    overflow: auto;
+    font: 11px/1.5 "Montserrat", Arial, Helvetica, sans-serif;
+  }
+
+  .leaflet-tooltip {
+    font-weight: 700;
+  }
+
+  #map {
+    height: 100%;
+  }
+
+  #elevation-div {
+    height: 100%;
+    font: 12px/1.5 "Montserrat", Arial, Helvetica, sans-serif;
+  }
+
+  .data-summary {
+    font-family: "Montserrat", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 45px;
+  }
+
+  .data-summary .summaryvalue {
+    font-weight: bold;
+  }
+  .chart-placeholder {
+    top: 20%;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-family: "Montserrat", Verdana, Arial, Helvetica, sans-serif;
+    font-style: italic;
+    opacity: 0.5;
+    font-size: 0.9rem;
+  }
+
+  .custom-theme.leaflet-control.elevation .area {
+    fill: hsla(23, 15%, 61% 0.30);
+    stroke: #000000;
+    stroke-width: 2.8;
+  }
+
+  .custom-theme.height-focus.circle-lower {
+    fill: #A68D8D;
+  }
+
+  .custom-theme.elevation-polyline {
+    stroke: yellow;
+    stroke-opacity: 0.85;
+  }
+}
