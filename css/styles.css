@@ -439,7 +439,11 @@ footer {
     font-size: 0.9em;
     margin: 0
 }
-
+.vtimeline-content li {
+    color: #74808a;
+    font-size: 0.9em;
+    margin: 0
+}
 .vtimeline-point {
     position: relative;
     display: block;
