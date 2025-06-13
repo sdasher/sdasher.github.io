@@ -391,7 +391,7 @@ footer {
     content: '';
     top: 0;
     bottom: 0;
-    left: 30px;
+    left: 290px;
     right: auto;
     height: 100%;
     width: 3px;
@@ -407,7 +407,7 @@ footer {
     background: #113014;
     background: linear-gradient(to bottom, #113014, rgba(52, 152, 219, 0));
     top: 100%;
-    left: 30px
+    left: 290px
 }
 
 .vtimeline-content {
