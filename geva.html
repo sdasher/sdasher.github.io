@@ -1,3 +1,7 @@
+
+act-verb-quiz.html
+
+100%
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +67,7 @@
 <body>
 <div class="wrap">
   <h1>ACT English Practice: Agreement, Pronouns &amp; Verb Choice</h1>
-  <p class="sub">145 practice questions on subject-verb agreement, pronouns, tense, verb forms, sentence structure, and concision</p>
+  <p class="sub">245 practice questions on subject-verb agreement, pronouns, tense, verb forms, sentence structure, and concision</p>
 
   <!-- START SCREEN -->
   <div id="start" class="card ui">
@@ -112,9 +116,16 @@ const SECTIONS = [
   "Verb Forms",
   "Simple vs. “-ing” Verbs and Sentence Structure",
   "Concision and Style",
-  "Advanced Drill: Subject-Verb Agreement",
-  "Advanced Drill: Pronoun Agreement, Case, and Reference",
-  "Advanced Drill: Awkward Verb Constructions"
+  "Subject-Verb Agreement (Advanced Drill)",
+  "Pronoun Agreement, Case, and Reference",
+  "Awkward Verb Constructions (Advanced Drill)"
+];
+
+// Question sets by number
+const SETS = [
+  { name: "Set 1: questions 1–100", from: 1, to: 100 },
+  { name: "Set 2 (advanced drills): questions 101–145", from: 101, to: 145 },
+  { name: "Set 3: questions 146–245", from: 146, to: 245 }
 ];
 
 // [section, question, [A, B, C, D], answer, explanation, (optional) also-accepted letter, (optional) note]
@@ -270,7 +281,114 @@ const DATA = [
 [8,"The scientist, after examining the samples, <u>was to discover</u> that the results were inconsistent.",["NO CHANGE","discovered","had been discovering","has been discovering"],"B","“Discovered” directly reports the completed finding. “Was to discover” adds unnecessary future-in-the-past framing."],
 [8,"As glaciers retreat, they <u>are leaving behind</u> ridges of sediment that reshape the valley.",["NO CHANGE","have been left behind","had left behind","will have left behind"],"A","“Are leaving behind” describes the current, ongoing process. The other options change the time or the voice."],
 [8,"The researchers <u>had been conducting</u> the survey for six months before the funding ran out.",["NO CHANGE","have been conducting","will conduct","conduct"],"A","“Had been conducting” shows an ongoing six-month activity before another past event (the funding running out)."],
-[8,"The sculpture, <u>having been constructed using</u> reclaimed steel, weighs nearly two tons.",["NO CHANGE","having its construction involve","constructed from","which was constructed with"],"C","“Constructed from” is a concise modifier that keeps the material and the completed construction without extra helping verbs."]
+[8,"The sculpture, <u>having been constructed using</u> reclaimed steel, weighs nearly two tons.",["NO CHANGE","having its construction involve","constructed from","which was constructed with"],"C","“Constructed from” is a concise modifier that keeps the material and the completed construction without extra helping verbs."],
+
+// ===== SET 3 (146–245) =====
+[1,"The list of volunteers who signed up for the weekend shifts <u>were</u> posted outside the gym.",["NO CHANGE","was","have been","are"],"B","The subject is “list” (singular). “Volunteers” and “shifts” sit inside modifying phrases."],
+[1,"Among the most valuable finds at the dig site <u>was</u> two bronze coins and a carved bone comb.",["NO CHANGE","is","has been","were"],"D","Inverted sentence. The subject (coins and comb) comes after the verb and is plural."],
+[1,"Each of the three proposals submitted to the council ___ a different approach to the parking problem.",["take","are taking","takes","have taken"],"C","“Each” is singular, no matter how many proposals follow it."],
+[1,"Neither the coach nor the athletes ___ aware that the meet had been rescheduled.",["were","was","is","has been"],"A","With neither/nor, the verb agrees with the closer subject, “athletes.”"],
+[1,"The readings from the sensor placed along the river ___ that water levels peaked on Tuesday.",["shows","has shown","show","is showing"],"C","The subject is “readings” (plural). “Sensor” and “river” are decoys."],
+[1,"There <u>is</u> a pair of scissors and two rolls of tape in the top drawer.",["NO CHANGE","are","was","has been"],"B","The subject follows the verb and is compound (a pair and two rolls), so it's plural."],
+[1,"Mathematics, along with chemistry and physics, ___ required for the engineering program.",["is","are","were","have been"],"A","“Along with” doesn't create a compound subject; “Mathematics” is singular."],
+[1,"Twenty dollars ___ too much to pay for a paperback novel.",["are","is","were","have been"],"B","An amount of money treated as one sum takes a singular verb."],
+[1,"The committee members who reviewed the grant applications ___ recommended funding only four.",["has","was","is","have"],"D","The subject is “members” (plural)."],
+[1,"Whoever finishes the reading assignments early ___ allowed to start the lab.",["are","were","is","have been"],"C","A “whoever” clause used as a subject is singular."],
+[1,"The origins of the festival, which began as a harvest celebration, ___ still debated by local historians.",["is","was","has been","are"],"D","The subject is “origins” (plural). The “which” clause is a decoy."],
+[1,"Not only the students but also their teacher ___ surprised by the test results.",["were","are","was","have been"],"C","With not only/but also, the verb agrees with the closer subject, “teacher.”"],
+[1,"One of the reasons that the experiments ___ failed was a contaminated sample.",["has","have","is","was"],"B","Inside the “that” clause, the subject is “experiments” (plural). The main verb “was” agrees with “One.”"],
+[1,"Jordan is one of those athletes who ___ to practice an hour early.",["like","likes","has liked","is liking"],"A","“Who” refers to “athletes” (plural). Flip it: “Of those athletes who like to practice early, Jordan is one.”"],
+[1,"Of the four finalists, Mei is the only one who ___ performed at the national level.",["have","has","are","were"],"B","“The only one” takes a singular verb."],
+[1,"Either the director or her two assistants ___ the final schedule each week.",["approves","approve","is approving","has approved"],"B","With either/or, the verb agrees with the closer subject, “assistants.”"],
+[1,"The quality of the photographs taken during the expedition ___ surprisingly high.",["were","are","have been","was"],"D","The subject is “quality” (singular)."],
+[1,"Every student and teacher in the building ___ required to wear an ID badge.",["are","were","have been","is"],"D","“Every” before a compound subject makes it singular: every student and every teacher is."],
+[1,"Behind the old courthouse <u>stand</u> a statue of the town's founder.",["NO CHANGE","are standing","have stood","stands"],"D","Inverted sentence; the subject “statue” is singular."],
+[1,"The news from the two field stations ___ encouraging.",["is","are","were","have been"],"A","“News” is singular even though it ends in -s."],
+[1,"A series of storms <u>have</u> damaged the coastal highway.",["NO CHANGE","are","has","were"],"C","“A series” is singular; “of storms” is a modifying phrase."],
+[1,"The rest of the cookies ___ on the counter.",["is","was","are","has been"],"C","With “rest of,” “half of,” “some of,” and similar words, the verb agrees with the noun after “of.” “Cookies” is plural."],
+[1,"Half of the pizza ___ already been eaten.",["has","have","were","are"],"A","With “half of,” the verb agrees with the noun after “of.” “Pizza” is singular."],
+[1,"None of the evidence ___ to support the claim.",["seem","are seeming","have seemed","seems"],"D","“None of” + a noncount noun (“evidence”) takes a singular verb."],
+[1,"The pilot, as well as all of the passengers, <u>was</u> relieved when the plane landed safely.",["NO CHANGE","were","have been","are"],"A","“As well as” doesn't add to the subject; the subject is “pilot.”"],
+
+[7,"The coach asked Mateo and <u>I</u> to help set up the equipment.",["NO CHANGE","myself","me","mine"],"C","The pronoun is an object of “asked.” Drop “Mateo and”: the coach asked me."],
+[7,"<u>Her and her brother</u> started a lawn-care business last summer.",["NO CHANGE","She and her brother","Her brother and her","Herself and her brother"],"B","The compound is the subject of “started,” so use the subject form “She.”"],
+[7,"The scholarship will go to <u>whomever</u> submits the strongest essay.",["NO CHANGE","whoever","whom","whose"],"B","“Whoever” is the subject of “submits” inside its own clause: he submits the strongest essay."],
+[7,"The candidate <u>who</u> the committee interviewed first was offered the job.",["NO CHANGE","which","whose","whom"],"D","The committee interviewed him: the pronoun is the object of “interviewed,” so use “whom.”"],
+[7,"Each of the hotels on the island has updated <u>their</u> website.",["NO CHANGE","it's","its","they're"],"C","“Each” is singular, and a hotel is a thing, so use “its.”"],
+[7,"The band released <u>its</u> first album in 2019.",["NO CHANGE","it's","their's","its'"],"A","“Its” is the possessive; “band” is a singular collective noun."],
+[7,"Between you and <u>I</u>, the second draft is much stronger.",["NO CHANGE","myself","mine","me"],"D","“Between” is a preposition, so it takes the object form: between you and me."],
+[7,"My sister is a better swimmer than <u>me</u>.",["NO CHANGE","myself","I","mine"],"C","Complete the comparison: “than I am.” Formal written English uses “I.”"],
+[7,"When Ana called her aunt, <u>she</u> was preparing dinner.",["NO CHANGE","they","it","her aunt"],"D","“She” could mean Ana or her aunt. Naming the person removes the ambiguity."],
+[7,"The city council postponed the vote because <u>they</u> needed more information.",["NO CHANGE","one","it","them"],"C","“Council” is a singular collective noun, so use “it.”"],
+[7,"The engineers tested the bridge's cables, <u>which</u> showed signs of corrosion.",["NO CHANGE","who","whom","whose"],"A","“Which” correctly refers to the cables (things, not people)."],
+[7,"The pianist, <u>whose</u> hands had been injured, still finished the recital.",["NO CHANGE","who's","who","whom"],"A","“Whose” is possessive (the pianist's hands). “Who's” means “who is.”"],
+[7,"The professor <u>who's</u> lectures are always crowded won a teaching award.",["NO CHANGE","whose","who","whom"],"B","The lectures belong to the professor, so use the possessive “whose.” “Who's” means “who is.”"],
+[7,"The students who finished early helped <u>themself</u> to snacks.",["NO CHANGE","theirselves","themselves","them"],"C","The plural reflexive pronoun is “themselves.” “Theirselves” is not standard."],
+[7,"Lena and Marcus finished the project by <u>themselves</u>.",["NO CHANGE","theirselves","themself","them"],"A","“By themselves” (meaning “alone”) is correct; the reflexive refers back to the plural subject."],
+[7,"The tour guide told the group that <u>you</u> should stay on the marked trail.",["NO CHANGE","they","it","he"],"B","The sentence is about the group, so the pronoun should be “they,” not a sudden shift to “you.”"],
+[7,"The award was given to my partner and <u>myself</u> for our research.",["NO CHANGE","I","mine","me"],"D","“To” takes an object pronoun. Drop “my partner and”: given to me."],
+[7,"Dr. Okafor, <u>whom</u> many consider the field's leading expert, will speak at noon.",["NO CHANGE","who","which","whose"],"A","Many consider her the leading expert: the pronoun is the object of “consider,” so “whom” is correct."],
+[7,"Dr. Okafor, <u>whom</u> many believe is the field's leading expert, will speak at noon.",["NO CHANGE","who","which","whose"],"B","Remove “many believe”: “who is the field's leading expert.” The pronoun is the subject of “is,” so use “who.”"],
+[7,"The company announced that <u>it's</u> profits had doubled.",["NO CHANGE","its","their","its'"],"B","The profits belong to the company: possessive “its.” “It's” means “it is.”"],
+
+[2,"Since the library extended its hours, the number of evening visitors ___ steadily.",["grew","has grown","had grown","grows"],"B","“Since” + a past event calls for present perfect."],
+[2,"In 2015, the band ___ its final concert at the old arena.",["played","has played","had played","has been playing"],"A","A specific past date calls for simple past."],
+[2,"By the time the rescue team reached the hikers, the storm ___.",["passed","has passed","had passed","passes"],"C","“By the time” + a past event calls for past perfect for the earlier action."],
+[2,"By the end of this semester, Lucia ___ every course required for her minor.",["completes","has completed","completed","will have completed"],"D","An action completed by a future point calls for future perfect."],
+[2,"If the team ___ its best player, it would have won the championship.",["hadn't lost","didn't lose","wouldn't have lost","hasn't lost"],"A","A past unreal condition uses “had + past participle”; never “would have” in the “if” clause."],
+[2,"If I ___ in your position, I would ask for an extension.",["am","was being","were","had been"],"C","A present unreal condition uses the subjunctive “were.” “Had been” would require “would have asked.”"],
+[2,"The teacher suggested that Maria ___ her essay before Friday.",["revises","revised","will revise","revise"],"D","“Suggested that” calls for the subjunctive base form."],
+[2,"The manager asked that every employee ___ the safety training by May.",["complete","completes","completed","will complete"],"A","“Asked that” calls for the subjunctive base form."],
+[2,"Last week, the forecaster warned that the storm ___ the coast within two days.",["will reach","would reach","reaches","has reached"],"B","After a past-tense reporting verb (“warned”), “will” becomes “would.”"],
+[2,"In Shakespeare's play, Hamlet hesitates to act, and his delay ___ tragic consequences.",["had","had had","will have","has"],"D","Use present tense to discuss events in a literary work; matches “hesitates.”"],
+[2,"The hikers ___ for six hours when they finally spotted the trailhead.",["walked","have walked","had been walking","are walking"],"C","An ongoing action leading up to a past moment calls for past perfect progressive."],
+[2,"She ___ in Tucson for ten years and still loves the desert sunsets.",["has lived","lived","had lived","lives"],"A","The action began in the past and continues now (“still loves”): present perfect."],
+[2,"Two weeks ago, the museum ___ a rare dinosaur skull.",["acquires","had acquired","has acquired","acquired"],"D","“Two weeks ago” is a specific past time: simple past."],
+[2,"She realized that she ___ the wrong file only after the email was sent.",["attached","had attached","has attached","attaches"],"B","Attaching the file happened before the realization, so use past perfect."],
+[2,"Scientists now believe that the comet ___ the sun every 76 years.",["orbited","had orbited","orbits","would orbit"],"C","A general, ongoing truth takes simple present."],
+[2,"Researchers ___ the effects of the drug for three years and expect results next spring.",["studied","have been studying","had studied","were studying"],"B","The study started in the past and is still going on: present perfect progressive."],
+[2,"The essay argues that early start times harm students, and it ___ data from five school districts.",["presented","had presented","presents","will present"],"C","Present tense matches “argues.”"],
+[2,"When the alarm rang, Theo ___ for an hour.",["slept","had been sleeping","has slept","sleeps"],"B","An ongoing action leading up to a past moment calls for past perfect progressive."],
+[2,"If the city had built the levee in 2010, the neighborhood ___ dry today.",["would have stayed","will stay","would be","had been"],"C","A past condition with a present result (“today”) takes “would be.”"],
+[2,"Every morning last summer, my grandfather ___ the garden before breakfast.",["has watered","watered","had watered","waters"],"B","A repeated action during a finished past period takes simple past."],
+
+[3,"The old cat had ___ in the same sunny spot every afternoon for years.",["laid","lain","lay","lied"],"B","Lie (to rest): lie, lay, lain. After “had,” use “lain.”"],
+[3,"Before leaving, he ___ the blueprints on the conference table.",["laid","lay","lain","lied"],"A","Lay (to place) takes an object; its past tense is “laid.”"],
+[3,"The choir had ___ the anthem twice before the ceremony started.",["sang","sing","sung","singed"],"C","After “had,” use the past participle: sung."],
+[3,"By the end of the hike, we had ___ nearly ten miles.",["went","goed","go","gone"],"D","After “had,” use the past participle: gone."],
+[3,"The pipes ___ during last night's cold snap.",["froze","frozen","have froze","freezed"],"A","Simple past of “freeze” is “froze.”"],
+[3,"The water in the pond has ___ solid.",["froze","freezed","frozen","freezing"],"C","After “has,” use the past participle: frozen."],
+[3,"I ___ called if I had known you were waiting.",["would of","would have","would had","will have"],"B","Always “would have,” never “would of.”"],
+[3,"The sun had already ___ by the time we reached camp.",["rose","raised","rised","risen"],"D","Rise: rose, risen. After “had,” use “risen.” (“Raised” is from “raise,” which needs an object.)"],
+[3,"Her grades have ___ steadily since she started tutoring.",["rose","raised","risen","rised"],"C","After “have,” use the past participle of “rise”: risen."],
+[3,"The rules require that the referee ___ neutral.",["remain","remains","remained","will remain"],"A","“Require that” calls for the subjunctive base form."],
+
+[4,"The ancient tablet <u>is recording</u> a trade agreement between two cities.",["NO CHANGE","recording","records","it records"],"C","A fact stated by a document or object takes simple present."],
+[4,"The journals, <u>written</u> by sailors during the voyage, describe constant hunger.",["NO CHANGE","writing","they were written","were written"],"A","The past participle phrase is a modifier; the main verb is “describe.”"],
+[4,"The coach, frustrated by the team's sloppy passing, <u>scheduling</u> an extra practice.",["NO CHANGE","scheduled","and scheduled","having scheduled"],"B","The sentence needs a main verb for “coach.”"],
+[4,"<u>Restoring</u> the old theater took the community nearly a decade.",["NO CHANGE","They restored","Restored","To be restoring"],"A","The gerund phrase is the subject of “took.”"],
+[4,"The festival, which draws thousands of visitors each year<u>, it features</u> music from around the world.",["NO CHANGE",", featuring","features",", features"],"D","The “which” clause needs a closing comma, and the main verb needs no extra “it.”"],
+[4,"The town lost power for three days; residents <u>relying</u> on generators and candles.",["NO CHANGE","relied","having relied","to rely"],"B","A semicolon needs a complete clause on both sides."],
+[4,"While the chef <u>was preparing</u> the sauce, the oven caught fire.",["NO CHANGE","prepares","preparing","has prepared"],"A","An action in progress when something else happened takes the past progressive."],
+[4,"The program trains volunteers, <u>matching</u> them with local schools, and evaluates their progress.",["NO CHANGE","matches","has matched","to match"],"B","The three verbs form a series (trains, matches, evaluates) and must be parallel."],
+[4,"The study <u>was finding</u> that teenagers who read daily score higher on vocabulary tests.",["NO CHANGE","finding","found","it found"],"C","A completed finding takes simple past; don't double the subject."],
+[4,"The museum's newest painting, <u>which hangs</u> near the entrance, attracts long lines.",["NO CHANGE","hanging it","it hangs","which hanging"],"A","The “which” clause has its own verb; the main verb is “attracts.”"],
+[4,"My grandmother <u>is owning</u> the same sewing machine she bought in 1962.",["NO CHANGE","owning","has been owning","owns"],"D","“Own” is a state verb; it doesn't take the progressive."],
+[4,"The geologists <u>were still measuring</u> the crater when the second tremor hit.",["NO CHANGE","still measured","still measuring","had still measured"],"A","“Still” + an interruption signals the past progressive."],
+[4,"The letter, <u>being written</u> in 1863, describes the Battle of Gettysburg.",["NO CHANGE","was written","written","it was written"],"C","Use a past participle modifier; the main verb is “describes.”"],
+[4,"The guidebook <u>it recommends</u> visiting the canyon at sunrise.",["NO CHANGE","recommending","is recommending","recommends"],"D","Don't double the subject (“guidebook it”)."],
+[4,"Although the bridge <u>was being</u> narrow, it carries thousands of cars each day.",["NO CHANGE","being","is","it is"],"C","“Narrow” is a state; present tense matches “carries.”"],
+
+[5,"The manager <u>made a decision to hire</u> two additional cashiers.",["NO CHANGE","decided to hire","came to a decision to hire","was deciding on hiring"],"B","Use a strong verb instead of a noun phrase."],
+[5,"<u>Mistakes were made by the referee</u> in the final minutes of the game.",["NO CHANGE","It was the referee who made mistakes","The referee made mistakes","Mistakes, made by the referee,"],"C","Active voice is clearest and most direct."],
+[5,"The volunteers <u>gave assistance to</u> families displaced by the flood.",["NO CHANGE","provided assistance for","assisted","were assisting with"],"C","A single strong verb replaces the wordy phrase."],
+[5,"The two scientists <u>collaborated together jointly</u> on the study.",["NO CHANGE","collaborated together","jointly collaborated","collaborated"],"D","“Collaborate” already means “work together,” so “together” and “jointly” are redundant."],
+[5,"<u>Due to the fact that</u> the road was icy, school was canceled.",["NO CHANGE","Because","Owing to the fact that","In light of the fact that"],"B","All four mean the same thing; the shortest wins."],
+[5,"The new evidence <u>is suggestive of the possibility</u> that the fire was accidental.",["NO CHANGE","is suggesting","suggests","gives a suggestion"],"C","“Suggests” replaces a wordy phrase without changing the meaning."],
+[5,"The author <u>writes</u> about growing up in rural Arizona.",["NO CHANGE","is writing a book that tells","writes in her work","has written words"],"A","The original is already the most concise."],
+[5,"<u>Being that the tickets were sold out</u>, we watched the game at home.",["NO CHANGE","Because the tickets were sold out","Being as the tickets were sold out","The tickets were sold out"],"B","Avoid “being that” and “being as.” Choice D creates a comma splice."],
+[5,"The report <u>was written in a manner that was clear and concise</u>.",["NO CHANGE","was written clearly and in a concise manner","had clear and concise writing","was written clearly and concisely"],"D","Two parallel adverbs are the most concise option."],
+[5,"<u>At this point in time</u>, the committee has not reached a decision.",["NO CHANGE","Now","At this present moment in time","Currently at this time"],"B","“Now” says the same thing in one word."]
 ];
 
 const LETTERS = "ABCD";
@@ -288,10 +406,11 @@ let pool = [], idx = 0, results = [], answered = false;
   const sel = $("sectionSelect");
   const count = f => QUESTIONS.filter(f).length;
   sel.add(new Option(`All questions (${QUESTIONS.length})`, "all"));
-  sel.add(new Option(`Practice set: questions 1–100 (${count(q => q.section <= 5)})`, "set1"));
-  sel.add(new Option(`Advanced drills: questions 101–145 (${count(q => q.section >= 6)})`, "set2"));
+  SETS.forEach((s, i) => {
+    sel.add(new Option(`${s.name} (${count(q => q.num >= s.from && q.num <= s.to)})`, "set" + i));
+  });
   SECTIONS.forEach((name, i) => {
-    sel.add(new Option(`${name} (${count(q => q.section === i + 1)})`, String(i + 1)));
+    sel.add(new Option(`Section: ${name} (${count(q => q.section === i + 1)})`, "sec" + (i + 1)));
   });
 })();
 
@@ -418,9 +537,13 @@ $("startBtn").onclick = () => {
   const v = $("sectionSelect").value;
   let qs;
   if (v === "all") qs = QUESTIONS;
-  else if (v === "set1") qs = QUESTIONS.filter(q => q.section <= 5);
-  else if (v === "set2") qs = QUESTIONS.filter(q => q.section >= 6);
-  else qs = QUESTIONS.filter(q => q.section === Number(v));
+  else if (v.startsWith("set")) {
+    const s = SETS[Number(v.slice(3))];
+    qs = QUESTIONS.filter(q => q.num >= s.from && q.num <= s.to);
+  } else {
+    const n = Number(v.slice(3));
+    qs = QUESTIONS.filter(q => q.section === n);
+  }
   startQuiz(qs);
 };
 $("nextBtn").onclick = next;
@@ -438,3 +561,4 @@ document.addEventListener("keydown", e => {
 </script>
 </body>
 </html>
+Displaying act-verb-quiz.html.
