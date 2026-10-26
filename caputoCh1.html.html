@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometry Chapter 1 Practice Quiz</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1d2430; --muted:#5d6878; --line:#d9dee6; --card:#f6f8fb;
+  --accent:#1f4e79; --accent-fg:#ffffff; --ok:#1e7a46; --ok-bg:#e6f4ec; --bad:#b3261e; --bad-bg:#fbe9e7;
+  --dot:#e3e8ef; --grid:#e3e8ef; --axis:#9aa6b6; --pad:#c0392b;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14181f; --fg:#e7ebf1; --muted:#a3adbb; --line:#2c3440; --card:#1b212a;
+    --accent:#6fa8dc; --accent-fg:#0d1520; --ok:#6fcf97; --ok-bg:#16301f; --bad:#ff8a80; --bad-bg:#3a1c1a;
+    --dot:#2c3440; --grid:#262d38; --axis:#5d6878; --pad:#ff8a80;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14181f; --fg:#e7ebf1; --muted:#a3adbb; --line:#2c3440; --card:#1b212a;
+  --accent:#6fa8dc; --accent-fg:#0d1520; --ok:#6fcf97; --ok-bg:#16301f; --bad:#ff8a80; --bad-bg:#3a1c1a;
+  --dot:#2c3440; --grid:#262d38; --axis:#5d6878; --pad:#ff8a80;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.35rem;margin:0 0 2px}
+.sub{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.score{font-weight:600;font-size:.95rem}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:4px 10px;font-size:.82rem;cursor:pointer}
+.chip.on{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.dots{display:grid;grid-template-columns:repeat(auto-fill,minmax(26px,1fr));gap:4px;margin-bottom:14px}
+.dots button{height:26px;border:0;border-radius:6px;background:var(--dot);color:var(--fg);font-size:.72rem;cursor:pointer;padding:0}
+.dots button.ok{background:var(--ok);color:var(--bg)}
+.dots button.bad{background:var(--bad);color:var(--bg)}
+.dots button.cur{outline:2px solid var(--accent);outline-offset:1px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+.tip{border-left:4px solid var(--accent);padding:6px 10px;margin:0 0 12px;font-size:.9rem;background:var(--bg);border-radius:0 8px 8px 0}
+.figbox{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px;margin-bottom:10px;text-align:center}
+.fig{width:100%;max-width:440px;height:auto;color:var(--fg)}
+.fig .ln{stroke:currentColor;stroke-width:1.8;fill:none}
+.fig .thin{stroke:currentColor;stroke-width:1.3;fill:none}
+.fig .dt{fill:currentColor}
+.fig .lb{fill:currentColor;font:700 15px system-ui,sans-serif;text-anchor:middle;dominant-baseline:middle}
+.cap{font-size:.85rem;color:var(--muted);margin:4px 0 0}
+.q{font-size:1.05rem;font-weight:600;margin:6px 0 12px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);font:inherit;cursor:pointer}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt .k{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:.8rem;font-weight:700}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt[disabled]{cursor:default}
+.fb{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:.95rem}
+.fb.ok{background:var(--ok-bg);border:1px solid var(--ok)}
+.fb.bad{background:var(--bad-bg);border:1px solid var(--bad)}
+.fb b{display:block;margin-bottom:2px}
+.nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);border-radius:8px;padding:8px 14px;font:600 .95rem system-ui,sans-serif;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn[disabled]{opacity:.4;cursor:default}
+.padwrap{margin:12px 0 4px;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:8px;text-align:center}
+.padwrap svg{width:100%;max-width:280px;height:auto;cursor:crosshair;touch-action:manipulation}
+.padhead{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.padhead button{font-size:.8rem;padding:3px 10px}
+.res h2{font-size:1.2rem;margin:0 0 8px}
+.big{font-size:2rem;font-weight:800;margin:4px 0}
+.bar{height:10px;border-radius:6px;background:var(--dot);overflow:hidden;margin:4px 0 10px}
+.bar span{display:block;height:100%;background:var(--accent)}
+.row{display:flex;justify-content:space-between;font-size:.92rem}
+.missed{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+.missed button{border:1px solid var(--bad);background:var(--bad-bg);color:var(--fg);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:.85rem}
+@media (max-width:480px){.wrap{padding:12px 16px}.card{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+(function(){
+"use strict";
+/* ---------- drawing helpers ---------- */
+var uid = 0;
+function pol(c, a, r){ return [c[0] + r*Math.cos(a*Math.PI/180), c[1] - r*Math.sin(a*Math.PI/180)]; }
+function f(n){ return Math.round(n*10)/10; }
+function wrapSvg(w, h, body){
+  var id = "ah" + (++uid);
+  return '<svg class="fig" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Geometry diagram"><defs><marker id="'+id+'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>' + body.split("__M").join(id) + '</svg>';
+}
+function line2(a,b){ return '<line class="ln" x1="'+f(a[0])+'" y1="'+f(a[1])+'" x2="'+f(b[0])+'" y2="'+f(b[1])+'" marker-start="url(#__M)" marker-end="url(#__M)"/>'; }
+function ray(a,b){ return '<line class="ln" x1="'+f(a[0])+'" y1="'+f(a[1])+'" x2="'+f(b[0])+'" y2="'+f(b[1])+'" marker-end="url(#__M)"/>'; }
+function seg(a,b){ return '<line class="ln" x1="'+f(a[0])+'" y1="'+f(a[1])+'" x2="'+f(b[0])+'" y2="'+f(b[1])+'"/>'; }
+function dot(p, lab, dx, dy){ return '<circle class="dt" cx="'+f(p[0])+'" cy="'+f(p[1])+'" r="3.4"/>' + (lab ? '<text class="lb" x="'+f(p[0]+dx)+'" y="'+f(p[1]+dy)+'">'+lab+'</text>' : ''); }
+function tick(a,b,n){
+  var mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2, L=Math.hypot(b[0]-a[0], b[1]-a[1]);
+  var ux=(b[0]-a[0])/L, uy=(b[1]-a[1])/L, nx=-uy, ny=ux, s="";
+  for (var i=0;i<n;i++){ var o=(i-(n-1)/2)*5, cx=mx+ux*o, cy=my+uy*o; s+='<line class="thin" x1="'+f(cx-nx*7)+'" y1="'+f(cy-ny*7)+'" x2="'+f(cx+nx*7)+'" y2="'+f(cy+ny*7)+'"/>'; }
+  return s;
+}
+function box(v,d1,d2,s){
+  s = s || 11;
+  function u(d){ var L=Math.hypot(d[0]-v[0], d[1]-v[1]); return [(d[0]-v[0])/L, (d[1]-v[1])/L]; }
+  var a=u(d1), b=u(d2), p1=[v[0]+a[0]*s, v[1]+a[1]*s], p3=[v[0]+b[0]*s, v[1]+b[1]*s], p2=[p1[0]+b[0]*s, p1[1]+b[1]*s];
+  return '<polyline class="thin" points="'+f(p1[0])+','+f(p1[1])+' '+f(p2[0])+','+f(p2[1])+' '+f(p3[0])+','+f(p3[1])+'"/>';
+}
+
+/* ---------- figures ---------- */
+var FIG = {
+  busy: function(){
+    var O=[210,165], A=pol(O,200,140), B=pol(O,20,140), C=pol(O,120,120), D=pol(O,300,150), E=pol(O,70,125);
+    var P=pol(O,300,95), G=pol(P,190,120), H=pol(P,10,120);
+    var s = line2(pol(O,200,175), pol(O,20,175)) + line2(pol(O,120,175), pol(O,300,185)) + ray(O, pol(O,70,160))
+          + line2(pol(P,190,165), pol(P,10,165)) + seg(C,B)
+          + dot(A,"A",-2,18) + dot(B,"B",4,-14) + dot(C,"C",-15,-4) + dot(D,"D",16,4) + dot(E,"E",15,4)
+          + dot(O,"O",-8,18) + dot(P,"P",12,-13) + dot(G,"G",0,18) + dot(H,"H",2,-14);
+    return { svg: wrapSvg(440,340,s), cap: "Lines AB and CD intersect at O. Line GH crosses line CD at P. Ray OE starts at O. Segment CB connects C and B. Not drawn to scale." };
+  },
+  tri: function(){
+    var J=[70,50], K=[70,240], L=[350,240], M=[210,240];
+    var s = seg(J,K)+seg(K,L)+seg(L,J)+seg(J,M)+tick(K,M,1)+tick(M,L,1)+box(K,J,L,13)
+          + dot(J,"J",-14,-6)+dot(K,"K",-14,10)+dot(L,"L",14,10)+dot(M,"M",0,20);
+    return { svg: wrapSvg(420,275,s), cap: "Triangle JKL with point M on side KL. Only the markings shown are known." };
+  },
+  right: function(){
+    var B=[80,260], A=pol(B,0,250), C=pol(B,90,190), D=pol(B,60,210);
+    var s = ray(B,pol(B,0,290)) + ray(B,pol(B,90,225)) + ray(B,pol(B,60,250)) + box(B,A,C,14)
+          + dot(B,"B",-14,12) + dot(A,"A",0,18) + dot(C,"C",-16,0) + dot(D,"D",14,6);
+    return { svg: wrapSvg(400,290,s), cap: "∠ABC is marked as a right angle. Ray BD is inside ∠ABC. m∠ABD = 2x + 8 and m∠DBC = 4x + 10. Not drawn to scale." };
+  },
+  obt: function(){
+    var Q=[70,250], P=pol(Q,0,250), S=pol(Q,40,215), R=pol(Q,75,195);
+    var s = ray(Q,pol(Q,0,300)) + ray(Q,pol(Q,40,262)) + ray(Q,pol(Q,75,238))
+          + dot(Q,"Q",-14,12) + dot(P,"P",0,18) + dot(S,"S",14,8) + dot(R,"R",16,4);
+    return { svg: wrapSvg(400,280,s), cap: "Ray QS is inside ∠PQR. m∠PQS = 3x + 10, m∠SQR = 2x + 20, and m∠PQR = 7x − 20. Not drawn to scale." };
+  },
+  para: function(){
+    var A=[110,210], B=[290,210], C=[240,90], D=[60,90], E=[380,210];
+    var s = seg(A,B)+seg(B,C)+seg(C,D)+seg(D,A)+ray(B,[410,210])
+          + dot(A,"A",-4,18)+dot(B,"B",0,18)+dot(C,"C",12,-10)+dot(D,"D",-12,-10)+dot(E,"E",0,18);
+    return { svg: wrapSvg(440,240,s), cap: "ABCD is a parallelogram. Side AB is extended past B to point E. m∠DAB = 115°. Not drawn to scale." };
+  }
+};
+
+/* ---------- questions ---------- */
+var SECTIONS = [
+  { name:"Busy diagrams", tip:"Before you answer, find the two lines that make the angle. Trace them with your finger (or a highlighter on paper) and ignore everything else." },
+  { name:"Point to the proof", tip:"For every “yes,” you should be able to point to a mark, a given, or a definition. “It looks like it” doesn’t count." },
+  { name:"Sketch before you calculate", tip:"Plot the points on the sketch pad first. Predict: does the line rise or fall? Is it steep or flat? Then check that your answer matches." },
+  { name:"Quick review", tip:"Rays, angle pairs, and quadrilaterals." }
+];
+
+var Q = [
+/* ---- Busy diagrams (14) ---- */
+{s:0,fig:"busy",q:"Which angle is vertical to ∠AOC?",o:["∠COB","∠BOD","∠AOD","∠DPG"],a:1,
+ e:"Vertical angles share a vertex, and their sides are opposite rays. Trace lines AB and CD: OA is opposite OB and OC is opposite OD, so ∠AOC pairs with ∠BOD, the opposite opening of the X."},
+{s:0,fig:"busy",q:"Which angle is vertical to ∠BOC?",o:["∠AOD","∠AOC","∠EOB","∠HPD"],a:0,
+ e:"Trace lines AB and CD. The opening across from ∠BOC is ∠AOD. ∠EOB uses ray OE, which isn’t part of either line."},
+{s:0,fig:"busy",q:"Which pair of angles are vertical angles?",o:["∠BOD and ∠OPH","∠OPH and ∠DPG","∠AOC and ∠COB","∠EOB and ∠EOC"],a:1,
+ e:"∠OPH and ∠DPG both have vertex P, and their sides are opposite rays (PO↔PD and PH↔PG). ∠BOD and ∠OPH have different vertices, so they can’t be vertical angles."},
+{s:0,fig:"busy",q:"Which angle forms a linear pair with ∠AOE?",o:["∠EOC","∠EOB","∠BOD","∠AOC"],a:1,
+ e:"∠AOE and ∠EOB share vertex O and side OE, and their other sides (OA and OB) are opposite rays that form line AB. Together they make a straight line, so they add to 180°."},
+{s:0,fig:"busy",q:"Which angle forms a linear pair with ∠COE?",o:["∠EOD","∠EOB","∠AOC","∠AOE"],a:0,
+ e:"∠COE and ∠EOD share side OE, and OC and OD are opposite rays (line CD). ∠EOB also shares side OE, but OC and OB are not opposite rays."},
+{s:0,fig:"busy",q:"Does ∠EOB have a vertical angle shown in this diagram?",o:["Yes, ∠AOD","Yes, ∠COA","No, because the ray opposite OE isn’t drawn","Yes, ∠DPG"],a:2,
+ e:"A vertical angle needs both sides to be opposite rays. OB has an opposite ray (OA), but OE doesn’t have one in the diagram. Ray OE stops at O, so ∠EOB has no vertical partner here."},
+{s:0,fig:"busy",q:"Are ∠BOD and ∠OPH vertical angles?",o:["Yes, they look about the same size","Yes, they’re both on line CD","No, they have different vertices (O and P)","No, because one of them is acute"],a:2,
+ e:"Vertical angles must share a vertex. ∠BOD is at O and ∠OPH is at P, so they can’t be vertical angles, no matter what they look like."},
+{s:0,fig:"busy",q:"Suppose m∠AOC = 80°. What is m∠BOD?",o:["80°","100°","10°","180°"],a:0,
+ e:"∠AOC and ∠BOD are vertical angles, and vertical angles are always congruent. So m∠BOD = 80°."},
+{s:0,fig:"busy",q:"Suppose m∠AOC = 80°. What is m∠AOD?",o:["80°","100°","10°","280°"],a:1,
+ e:"∠AOC and ∠AOD share side OA, and OC and OD are opposite rays, so they form a linear pair: 180° − 80° = 100°."},
+{s:0,fig:"busy",q:"Suppose m∠OPH = 110°. Which other angle at P must also measure 110°?",o:["∠HPD","∠GPO","∠DPG","∠BOD"],a:2,
+ e:"Trace lines CD and GH at P. ∠DPG is across the X from ∠OPH, so they’re vertical angles, and vertical angles are congruent."},
+{s:0,fig:"busy",q:"Suppose m∠OPH = 110°. What is m∠HPD?",o:["110°","70°","20°","250°"],a:1,
+ e:"∠OPH and ∠HPD share side PH, and PO and PD are opposite rays, so they form a linear pair: 180° − 110° = 70°."},
+{s:0,fig:"busy",q:"Which three points are collinear?",o:["A, O, E","C, O, D","C, E, B","O, P, H"],a:1,
+ e:"C, O, and D all lie on line CD (and so does P). E is on a ray from O, not on line AB or line CD."},
+{s:0,fig:"busy",q:"You want to find the vertical angle partner of ∠GPO. Which two lines should you trace?",o:["Lines AB and CD","Lines CD and GH","Lines AB and GH","Ray OE and line GH"],a:1,
+ e:"∠GPO has its vertex at P, where lines CD and GH cross. Trace those two lines and ignore everything else. Its partner across the X is ∠HPD."},
+{s:0,fig:"busy",q:"How are ∠GPD and ∠DPH related?",o:["They’re vertical angles","They’re a linear pair","They’re not related","They’re complementary"],a:1,
+ e:"They share vertex P and side PD, and their other sides (PG and PH) are opposite rays forming line GH. That makes them a linear pair, so they add to 180°."},
+
+/* ---- Point to the proof (12) ---- */
+{s:1,fig:"tri",q:"Can you conclude that M is the midpoint of KL?",o:["Yes, the tick marks show KM ≅ ML","Yes, M looks centered","No, you would need measurements","No, only isosceles triangles have midpoints"],a:0,
+ e:"The matching tick marks on KM and ML are the proof: they say those segments are congruent, so M is the midpoint."},
+{s:1,fig:"tri",q:"Can you conclude that JM bisects ∠KJL?",o:["Yes, it goes through the middle of the triangle","Yes, M is the midpoint, so the angle is split in half","No, no arc marks or measures show the two angles are equal","No, angle bisectors must be perpendicular"],a:2,
+ e:"Hitting the midpoint of the opposite side makes JM a median, not an angle bisector. To say it bisects ∠KJL, you’d need matching arc marks or equal measures for ∠KJM and ∠MJL."},
+{s:1,fig:"tri",q:"Is ∠JKL a right angle?",o:["Yes, the right-angle box at K shows it","Yes, JK looks vertical","No, you can’t tell without a protractor","No, only squares have right angles"],a:0,
+ e:"The right-angle box at K is the proof. That mark means 90°, whatever the drawing looks like."},
+{s:1,fig:"tri",q:"Is JM a median of triangle JKL?",o:["Yes, it connects vertex J to the midpoint of the opposite side","No, it doesn’t bisect ∠J","No, the triangle isn’t isosceles","You can’t tell"],a:0,
+ e:"A median goes from a vertex to the midpoint of the opposite side. The tick marks prove M is the midpoint of KL, so JM is a median. Every triangle has three medians, isosceles or not."},
+{s:1,fig:"tri",q:"Is JM an altitude of triangle JKL?",o:["Yes, every median is also an altitude","Yes, it goes from a vertex to the opposite side","There’s no proof, because there’s no right-angle mark at M","Yes, it looks perpendicular"],a:2,
+ e:"An altitude must be perpendicular to the opposite side. With no right-angle box at M, you can’t claim it. (Medians and altitudes are usually different segments.)"},
+{s:1,fig:"busy",q:"Can you conclude that ray OE bisects ∠BOC?",o:["Yes, it looks like it goes right down the middle","No, nothing marked or given says ∠BOE ≅ ∠EOC","Yes, E is between B and C","No, bisectors only exist in triangles"],a:1,
+ e:"It may look centered, but there are no arc marks or given measures. Without proof, you can’t assume it."},
+{s:1,fig:"busy",q:"∠AOC looks close to 90°. Can you conclude it’s a right angle?",o:["Yes, it looks like a right angle","No, there’s no right-angle box or given measure","Yes, any two lines that cross are perpendicular","No, it’s clearly obtuse"],a:1,
+ e:"Only a right-angle mark or a given 90° measure proves a right angle. Diagrams aren’t drawn to scale."},
+{s:1,fig:"busy",q:"With no marks on them, can you conclude that ∠AOC ≅ ∠BOD?",o:["No, you’d need arc marks","Yes, they’re vertical angles, and vertical angles are always congruent","Yes, they look the same size","No, they’re different sizes"],a:1,
+ e:"Proof doesn’t have to be a mark. It can be a definition or a theorem. Here, the lines prove these are vertical angles, and vertical angles are always congruent."},
+{s:1,fig:"right",q:"Find x.",o:["12","27","−1","15"],a:0,
+ e:"The right-angle box is your given: the two parts add to 90°. So (2x + 8) + (4x + 10) = 90, which gives 6x + 18 = 90 and x = 12."},
+{s:1,fig:"right",q:"What is m∠DBC?",o:["32°","58°","60°","30°"],a:1,
+ e:"m∠DBC = 4(12) + 10 = 58°. Check: m∠ABD = 2(12) + 8 = 32°, and 32 + 58 = 90 ✓. The picture makes ∠DBC look like the smaller angle, but it’s the larger one. Trust the algebra, not the drawing."},
+{s:1,fig:"obt",q:"Find x.",o:["25","10","6","30"],a:0,
+ e:"Part + part = whole: (3x + 10) + (2x + 20) = 7x − 20. That gives 5x + 30 = 7x − 20, then 50 = 2x, so x = 25. (Setting the two parts equal to each other would give 10, but nothing says ray QS bisects the angle.)"},
+{s:1,fig:"obt",q:"Is ∠PQR acute, right, or obtuse?",o:["Acute, since it looks like about 75°","Right","Obtuse, since m∠PQR = 155°","Straight"],a:2,
+ e:"m∠PQR = 7(25) − 20 = 155°, so it’s obtuse. Check: 85 + 70 = 155 ✓. The drawing looks acute, but the givens prove otherwise."},
+
+/* ---- Sketch before you calculate (12) ---- */
+{s:2,pad:true,q:"What is the slope of the line through (1, 2) and (3, 16)?",o:["7","1/7","−7","−1/7"],a:0,
+ e:"Rise = 16 − 2 = 14 and run = 3 − 1 = 2, so the slope is 14/2 = 7. Sketch check: the line climbs steeply to the right, so the slope should be a large positive number. A slope of 1/7 would be almost flat."},
+{s:2,pad:true,q:"Without calculating, describe the line through (−4, 6) and (5, −3).",o:["It rises from left to right","It falls from left to right, so the slope is negative","It’s horizontal","It’s vertical"],a:1,
+ e:"Moving right from x = −4 to x = 5, y drops from 6 to −3, so the line falls and the slope is negative. (The slope is −9/9 = −1.)"},
+{s:2,pad:true,q:"What is the slope of the line through (−2, 1) and (6, 3)?",o:["4","1/4","−1/4","−4"],a:1,
+ e:"Rise = 3 − 1 = 2 and run = 6 − (−2) = 8, so the slope is 2/8 = 1/4. Sketch check: the line climbs gently, so a small positive slope makes sense."},
+{s:2,pad:true,q:"What is the midpoint of (−6, 2) and (8, 4)?",o:["(1, 3)","(7, 1)","(2, 6)","(−1, 3)"],a:0,
+ e:"Average the x’s: (−6 + 8)/2 = 1. Average the y’s: (2 + 4)/2 = 3. Sketch check: the midpoint should sit between the two points."},
+{s:2,pad:true,q:"What is the midpoint of (2, 7) and (−4, 1)?",o:["(−1, 4)","(3, 3)","(−2, 8)","(1, 4)"],a:0,
+ e:"x: (2 + (−4))/2 = −1. y: (7 + 1)/2 = 4. So the midpoint is (−1, 4)."},
+{s:2,pad:true,q:"M(2, 3) is the midpoint of segment AB, and A is (−1, 1). Find B.",o:["(0.5, 2)","(5, 5)","(3, 4)","(1, 2)"],a:1,
+ e:"Going from A to M is 3 right and 2 up. Do the same again from M: (2 + 3, 3 + 2) = (5, 5). Sketch check: B has to be past M, not between A and M. (0.5, 2) is what you get by averaging A and M by mistake."},
+{s:2,pad:true,q:"A line has slope 3 and passes through (2, 5). What is its equation?",o:["y = 3x − 1","y = 3x + 5","y = 3x + 11","x = 3y − 1"],a:0,
+ e:"Use y = mx + b: 5 = 3(2) + b, so b = −1, and the equation is y = 3x − 1. Check by plugging in (2, 5): 3(2) − 1 = 5 ✓."},
+{s:2,pad:true,q:"Which is the point-slope equation of the line through (4, −1) with slope −2?",o:["y + 1 = −2(x − 4)","y − 1 = −2(x + 4)","x + 1 = −2(y − 4)","y − 4 = −2(x + 1)"],a:0,
+ e:"Point-slope form is y − y₁ = m(x − x₁). The y-value goes with y: y − (−1) = −2(x − 4), so y + 1 = −2(x − 4). Or use y = mx + b: −1 = −2(4) + b gives b = 7, so y = −2x + 7."},
+{s:2,pad:true,q:"Which point lies on the line y = 2x − 3?",o:["(5, 4)","(4, 5)","(0, 3)","(−1, −1)"],a:1,
+ e:"Plug in x = 4: 2(4) − 3 = 5 ✓, so (4, 5) is on the line. (5, 4) swaps x and y: 2(5) − 3 = 7, not 4."},
+{s:2,pad:true,q:"A student says the slope of the line through (0, 0) and (2, 10) is 1/5. What’s the best quick check?",o:["Redo the same calculation","Sketch it: the line rises 10 while moving only 2 right, so it’s steep and the slope must be big (it’s 5)","1/5 is fine because both points are positive","Average the two points"],a:1,
+ e:"A ten-second sketch catches the rise/run flip. A steep line has a big slope. 1/5 would be a nearly flat line."},
+{s:2,pad:true,q:"Describe the line through (−3, −2) and (−3, 5).",o:["Slope 0, so it’s horizontal","Undefined slope, so it’s vertical","Slope 7","Slope 1"],a:1,
+ e:"x stays at −3, so the line goes straight up and down. The run is 0, and you can’t divide by 0, so the slope is undefined."},
+{s:2,pad:true,q:"Line 1 has slope 6 and line 2 has slope 1/6. Are they perpendicular?",o:["Yes, because the slopes are reciprocals","No, because both lines rise to the right. Perpendicular slopes are opposite reciprocals, like 6 and −1/6","Yes, because any two different slopes are perpendicular","You can’t tell without a graph"],a:1,
+ e:"Sketch both lines: they both climb to the right, so they can’t meet at a right angle. Perpendicular slopes multiply to −1: 6 × (−1/6) = −1."},
+
+/* ---- Quick review (12) ---- */
+{s:3,q:"Points R, S, and T lie on a line in that order. Which ray is the same as ray RS?",o:["Ray SR","Ray RT","Ray TR","Ray ST"],a:1,
+ e:"A ray is named by its endpoint first. Ray RS starts at R and goes through S, then on through T. Ray RT starts at R and goes the same direction, so it’s the same ray."},
+{s:3,q:"Points R, S, and T lie on a line in that order. Which ray is opposite ray SR?",o:["Ray RS","Ray ST","Ray TS","Ray RT"],a:1,
+ e:"Opposite rays share an endpoint and point in opposite directions. Ray SR goes from S toward R, and ray ST goes from S toward T."},
+{s:3,fig:"busy",q:"How are ray OP and ray OD related?",o:["They’re the same ray","They’re opposite rays","They’re different rays because they have different names","They form a linear pair"],a:0,
+ e:"Both start at O and head the same direction, since P is on ray OD. Same endpoint and same direction means the same ray."},
+{s:3,fig:"busy",q:"How are ray PO and ray OP related?",o:["They’re the same ray","They’re different rays: one starts at P, the other starts at O","They’re opposite rays","They’re the same because they use the same two letters"],a:1,
+ e:"The first letter is the endpoint. Ray PO starts at P and points toward O, and ray OP starts at O and points toward P. They go in different directions."},
+{s:3,q:"Two angles measure 130° and 50°, and they’re in different parts of a diagram. Which describes them?",o:["They’re a linear pair","They’re supplementary but not a linear pair","They’re complementary","They’re vertical angles"],a:1,
+ e:"They add to 180°, so they’re supplementary. A linear pair also has to share a vertex and a side and form a straight line. Every linear pair is supplementary, but not every supplementary pair is a linear pair."},
+{s:3,q:"∠X and ∠Y are complementary, and m∠X = 34°. What is m∠Y?",o:["56°","146°","34°","66°"],a:0,
+ e:"Complementary angles add to 90°: 90 − 34 = 56°."},
+{s:3,q:"What is the supplement of a 40° angle?",o:["50°","140°","320°","40°"],a:1,
+ e:"Supplementary angles add to 180°: 180 − 40 = 140°."},
+{s:3,fig:"para",q:"What is m∠ABC?",o:["115°","65°","25°","75°"],a:1,
+ e:"In a parallelogram, consecutive angles are supplementary: 180 − 115 = 65°."},
+{s:3,fig:"para",q:"Are ∠DAB and ∠ABC a linear pair?",o:["Yes, because they add to 180°","No, because they’re supplementary but have different vertices (A and B)","Yes, because they share side AB","No, because they’re vertical angles"],a:1,
+ e:"They add to 180°, but a linear pair needs a shared vertex and opposite rays that form a straight line. These angles are at different corners."},
+{s:3,fig:"para",q:"What is m∠CBE?",o:["65°","115°","180°","25°"],a:1,
+ e:"∠ABC and ∠CBE ARE a linear pair: they share vertex B and side BC, and BA and BE are opposite rays. So m∠CBE = 180 − 65 = 115°."},
+{s:3,q:"Which quadrilateral has four congruent sides but doesn’t have to have right angles?",o:["Square","Rectangle","Rhombus","Trapezoid"],a:2,
+ e:"A rhombus has four congruent sides. A square is a rhombus that also has four right angles."},
+{s:3,q:"Which quadrilateral has exactly one pair of parallel sides?",o:["Parallelogram","Kite","Trapezoid","Rhombus"],a:2,
+ e:"A trapezoid has exactly one pair of parallel sides. Parallelograms (including rhombuses) have two pairs, and kites have none."}
+];
+
+/* ---------- state ---------- */
+var ans = new Array(Q.length).fill(null);
+var cur = 0, view = "quiz", padPts = [];
+var app = document.getElementById("app");
+
+function correctCount(){ var c=0; for (var i=0;i<Q.length;i++) if (ans[i]!==null && ans[i]===Q[i].a) c++; return c; }
+function answeredCount(){ return ans.filter(function(x){return x!==null;}).length; }
+function sectionStart(s){ for (var i=0;i<Q.length;i++) if (Q[i].s===s) return i; return 0; }
+function numInSection(i){ var n=0; for (var j=0;j<=i;j++) if (Q[j].s===Q[i].s) n++; return n; }
+function sectionSize(s){ return Q.filter(function(q){return q.s===s;}).length; }
+
+/* ---------- sketch pad ---------- */
+var PX = function(x){ return 10 + (x+8)*15; }, PY = function(y){ return 10 + (8-y)*15; };
+function padSvg(){
+  var s = '<svg id="pad" viewBox="0 0 260 260" role="img" aria-label="Coordinate sketch pad. Click to plot points.">';
+  for (var i=-8;i<=8;i++){
+    s += '<line x1="'+PX(i)+'" y1="10" x2="'+PX(i)+'" y2="250" stroke="var(--grid)" stroke-width="1"/>';
+    s += '<line x1="10" y1="'+PY(i)+'" x2="250" y2="'+PY(i)+'" stroke="var(--grid)" stroke-width="1"/>';
+  }
+  s += '<line x1="'+PX(0)+'" y1="10" x2="'+PX(0)+'" y2="250" stroke="var(--axis)" stroke-width="1.6"/>';
+  s += '<line x1="10" y1="'+PY(0)+'" x2="250" y2="'+PY(0)+'" stroke="var(--axis)" stroke-width="1.6"/>';
+  [-5,5].forEach(function(v){
+    s += '<text x="'+PX(v)+'" y="'+(PY(0)+12)+'" font-size="9" fill="var(--muted)" text-anchor="middle">'+v+'</text>';
+    s += '<text x="'+(PX(0)-8)+'" y="'+(PY(v)+3)+'" font-size="9" fill="var(--muted)" text-anchor="middle">'+v+'</text>';
+  });
+  if (padPts.length===2){
+    var a=padPts[0], b=padPts[1], dx=b[0]-a[0], dy=b[1]-a[1];
+    if (dx!==0 || dy!==0){
+      s += '<line x1="'+PX(a[0]-dx*40)+'" y1="'+PY(a[1]-dy*40)+'" x2="'+PX(a[0]+dx*40)+'" y2="'+PY(a[1]+dy*40)+'" stroke="var(--pad)" stroke-width="2"/>';
+    }
+  }
+  padPts.forEach(function(p){
+    s += '<circle cx="'+PX(p[0])+'" cy="'+PY(p[1])+'" r="4" fill="var(--pad)"/>';
+    var tx = PX(p[0]) + (p[0] > 4 ? -6 : 6), anchor = p[0] > 4 ? "end" : "start";
+    s += '<text x="'+tx+'" y="'+(PY(p[1])-7)+'" font-size="10" font-weight="700" fill="var(--fg)" text-anchor="'+anchor+'">('+p[0]+', '+p[1]+')</text>';
+  });
+  return s + '</svg>';
+}
+function bindPad(){
+  var el = document.getElementById("pad"); if (!el) return;
+  el.addEventListener("click", function(ev){
+    var r = el.getBoundingClientRect(), sx = (ev.clientX - r.left) * 260 / r.width, sy = (ev.clientY - r.top) * 260 / r.height;
+    var x = Math.round((sx-10)/15 - 8), y = Math.round(8 - (sy-10)/15);
+    if (x<-8||x>8||y<-8||y>8) return;
+    if (padPts.length>=2) padPts = [];
+    padPts.push([x,y]);
+    document.getElementById("padbox").innerHTML = padSvg(); bindPad();
+  });
+}
+
+/* ---------- render ---------- */
+function esc(s){ return s; }
+function renderQuiz(){
+  var q = Q[cur], chosen = ans[cur], sec = SECTIONS[q.s];
+  var h = '<h1>Geometry Chapter 1 Practice Quiz</h1><p class="sub">50 questions · points, lines, angles, and coordinates</p>';
+  h += '<div class="topbar"><div class="score">Correct: '+correctCount()+' / '+answeredCount()+' answered</div>'
+     + '<button class="btn ghost" id="finish">See results</button></div>';
+  h += '<div class="chips">' + SECTIONS.map(function(s,i){ return '<button class="chip'+(q.s===i?' on':'')+'" data-sec="'+i+'">'+s.name+'</button>'; }).join("") + '</div>';
+  h += '<div class="dots" aria-label="Question navigator">' + Q.map(function(qq,i){
+        var cls = ans[i]===null ? "" : (ans[i]===qq.a ? "ok" : "bad");
+        return '<button class="'+cls+(i===cur?' cur':'')+'" data-go="'+i+'" aria-label="Question '+(i+1)+'">'+(i+1)+'</button>'; }).join("") + '</div>';
+  h += '<div class="card"><div class="meta"><span>Question '+(cur+1)+' of '+Q.length+'</span><span>'+sec.name+' · '+numInSection(cur)+' of '+sectionSize(q.s)+'</span></div>';
+  if (numInSection(cur)===1) h += '<p class="tip">'+sec.tip+'</p>';
+  if (q.fig){ var F = FIG[q.fig](); h += '<div class="figbox">'+F.svg+'<p class="cap">'+F.cap+'</p></div>'; }
+  h += '<p class="q">'+esc(q.q)+'</p>';
+  if (q.pad){ h += '<div class="padwrap"><div class="padhead"><span>Sketch pad: tap two points to draw the line</span><button class="btn ghost" id="padclear">Clear</button></div><div id="padbox">'+padSvg()+'</div></div>'; }
+  h += '<div class="opts">' + q.o.map(function(o,i){
+        var cls = "";
+        if (chosen!==null){ if (i===q.a) cls=" right"; else if (i===chosen) cls=" wrong"; }
+        return '<button class="opt'+cls+'" data-opt="'+i+'"'+(chosen!==null?' disabled':'')+'><span class="k">'+"ABCD"[i]+'</span><span>'+o+'</span></button>'; }).join("") + '</div>';
+  h += '<div aria-live="polite">';
+  if (chosen!==null){
+    var ok = chosen===q.a;
+    h += '<div class="fb '+(ok?'ok':'bad')+'"><b>'+(ok?'Correct!':'Not quite. The answer is '+"ABCD"[q.a]+'.')+'</b>'+q.e+'</div>';
+  }
+  h += '</div>';
+  h += '<div class="nav"><button class="btn ghost" id="prev"'+(cur===0?' disabled':'')+'>← Back</button>'
+     + (cur===Q.length-1 ? '<button class="btn" id="finish2">Finish</button>' : '<button class="btn" id="next">Next →</button>') + '</div></div>';
+  app.innerHTML = h;
+
+  app.querySelectorAll("[data-opt]").forEach(function(b){ b.onclick = function(){ if (ans[cur]===null){ ans[cur] = +b.dataset.opt; renderQuiz(); } }; });
+  app.querySelectorAll("[data-go]").forEach(function(b){ b.onclick = function(){ go(+b.dataset.go); }; });
+  app.querySelectorAll("[data-sec]").forEach(function(b){ b.onclick = function(){ go(sectionStart(+b.dataset.sec)); }; });
+  var p = document.getElementById("prev"); if (p) p.onclick = function(){ go(cur-1); };
+  var n = document.getElementById("next"); if (n) n.onclick = function(){ go(cur+1); };
+  ["finish","finish2"].forEach(function(id){ var b=document.getElementById(id); if (b) b.onclick = function(){ view="results"; render(); }; });
+  var pc = document.getElementById("padclear"); if (pc) pc.onclick = function(){ padPts=[]; document.getElementById("padbox").innerHTML = padSvg(); bindPad(); };
+  bindPad();
+}
+function go(i){ if (i<0||i>=Q.length) return; if (Q[i].s!==Q[cur].s || i!==cur) padPts = []; cur=i; view="quiz"; render(); try{ app.scrollIntoView({block:"start"}); }catch(e){} }
+
+function renderResults(){
+  var c = correctCount(), a = answeredCount();
+  var h = '<h1>Geometry Chapter 1 Practice Quiz</h1><p class="sub">Results</p><div class="card res">';
+  h += '<h2>Your score</h2><div class="big">'+c+' / '+Q.length+'</div><p class="sub">'+a+' of '+Q.length+' answered</p>';
+  SECTIONS.forEach(function(s,si){
+    var idx=[]; Q.forEach(function(q,i){ if (q.s===si) idx.push(i); });
+    var ok = idx.filter(function(i){ return ans[i]===Q[i].a; }).length;
+    var missed = idx.filter(function(i){ return ans[i]!==null && ans[i]!==Q[i].a; });
+    var blank = idx.filter(function(i){ return ans[i]===null; });
+    h += '<div class="row"><span><b>'+s.name+'</b></span><span>'+ok+' / '+idx.length+'</span></div>';
+    h += '<div class="bar"><span style="width:'+(100*ok/idx.length)+'%"></span></div>';
+    if (missed.length){ h += '<div class="missed">' + missed.map(function(i){ return '<button data-go="'+i+'">Missed #'+(i+1)+'</button>'; }).join("") + '</div>'; }
+    if (blank.length){ h += '<p class="sub">Not answered yet: '+blank.map(function(i){return '#'+(i+1);}).join(", ")+'</p>'; }
+  });
+  h += '<div class="nav"><button class="btn ghost" id="back">← Back to quiz</button><span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">'
+     + '<button class="btn ghost" id="retry">Retry missed</button><button class="btn" id="restart">Start over</button></span></div></div>';
+  app.innerHTML = h;
+  app.querySelectorAll("[data-go]").forEach(function(b){ b.onclick = function(){ go(+b.dataset.go); }; });
+  document.getElementById("back").onclick = function(){ view="quiz"; render(); };
+  document.getElementById("retry").onclick = function(){
+    var first = -1;
+    for (var i=0;i<Q.length;i++) if (ans[i]!==null && ans[i]!==Q[i].a){ ans[i]=null; if (first<0) first=i; }
+    go(first<0 ? 0 : first);
+  };
+  document.getElementById("restart").onclick = function(){ ans = new Array(Q.length).fill(null); go(0); };
+}
+function render(){ if (view==="results") renderResults(); else renderQuiz(); }
+render();
+})();
+</script>
+</body>
+</html>
